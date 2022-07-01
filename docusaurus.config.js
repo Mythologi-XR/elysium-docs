@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Elysium',
   tagline: 'Elysium is a no-code creator studio and player application for interactive augmented reality experiences.',
-  url: 'https://docs.elysium.ar',
-  baseUrl: '/',
+  url: 'https://mythologi-xr.github.io/',
+  baseUrl: '/elysium-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
