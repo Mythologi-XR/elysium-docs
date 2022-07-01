@@ -18,7 +18,7 @@ const FooterContent = () => {
         Elysium is a no-code creator studio and player application for interactive augmented reality experiences.
       </p>
       <a href="#">
-        <img src="img/app-store-button.svg" width="120" />
+        <img src={useBaseUrl('img/app-store-button.svg')} width="120" />
       </a>
     </div>
   )
