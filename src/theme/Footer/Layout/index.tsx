@@ -9,7 +9,6 @@ const FooterContent = () => {
     <div className={styles.footerContent}>
       <img
         alt="Elysium logo"
-        // className={footerStyles.footer__logo}
         height={50}
         src={useBaseUrl('/img/elysium-logo-mono.svg')}
         title="Elysium - no-code world building studio for augmented reality"
