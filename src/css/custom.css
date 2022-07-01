@@ -72,6 +72,6 @@
 .footer__col {
   flex-grow: 1;
   flex-shrink: 1;
-  padding-left: 50px;
+  padding-right: 50px;
   white-space: nowrap;
 }
