@@ -11,27 +11,27 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Elysium: the AR authoring engine',
-    imgSrc: '/img/app-slides/elysium-1.jpg',
+    imgSrc: '@site/static/img/app-slides/elysium-1.jpg',
   },
   {
     title: 'Create AR experiences',
-    imgSrc: '/img/app-slides/elysium-2.jpg',
+    imgSrc: '@site/static/img/app-slides/elysium-2.jpg',
   },
   {
     title: 'Browse & collect 3D assets',
-    imgSrc: '/img/app-slides/elysium-3.jpg',
+    imgSrc: '@site/static/img/app-slides/elysium-3.jpg',
   },
   {
     title: 'Tether your work to the real world',
-    imgSrc: '/img/app-slides/elysium-4.jpg',
+    imgSrc: '@site/static/img/app-slides/elysium-4.jpg',
   },
   {
     title: 'Manage images, 3D art and more',
-    imgSrc: '/img/app-slides/elysium-5.jpg',
+    imgSrc: '@site/static/img/app-slides/elysium-5.jpg',
   },
   {
     title: 'Add real-world interaction',
-    imgSrc: '/img/app-slides/elysium-6.jpg',
+    imgSrc: '@site/static/img/app-slides/elysium-6.jpg',
   },
 ];
 
