@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import type {Props} from '@theme/Footer/Layout';
 import styles from './styles.module.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 const FooterContent = () => {
   return (
@@ -10,7 +11,7 @@ const FooterContent = () => {
         alt="Elysium logo"
         // className={footerStyles.footer__logo}
         height={50}
-        src="/img/elysium-logo-mono.svg"
+        src={useBaseUrl('/img/elysium-logo-mono.svg')}
         title="Elysium - no-code world building studio for augmented reality"
       />
       <p>
