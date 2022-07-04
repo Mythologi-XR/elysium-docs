@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Elysium',
   tagline: 'Elysium is a no-code creator studio and player application for interactive augmented reality experiences.',
-  url: 'https://mythologi-xr.github.io/',
-  baseUrl: '/elysium-docs/',
+  url: 'https://elysium.ar/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -97,16 +97,16 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discord.gg/367dDPambf',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/mythologixr',
+              },
+              {
+                label: 'Instagram',
+                href: 'https://www.instagram.com/mythologi.es/',
               },
             ],
           },
@@ -115,7 +115,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/Mythologi-XR',
               },
             ],
           },
