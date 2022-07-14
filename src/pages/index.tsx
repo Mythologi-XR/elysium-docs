@@ -5,12 +5,13 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
+const { tagline } = require('@site/docusaurus.config')
+
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Augmented Reality Worldbuilding`}
-      description="Description will go into a meta tag in <head />">
+      description={tagline}>
       <main>
         <HomepageFeatures />
       </main>

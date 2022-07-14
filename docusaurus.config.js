@@ -1,6 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const customFields = require('./src/customFields');
+
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
@@ -13,6 +15,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  customFields,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -67,15 +70,15 @@ const config = {
           src: 'img/elysium-logo-light.png',
         },
         items: [
+          // {
+          //   type: 'doc',
+          //   docId: 'intro',
+          //   position: 'left',
+          //   label: 'Tutorial',
+          // },
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {
-            href: '#',
-            label: 'Download on the App Store',
+            href: customFields.iosAppUrl,
+            label: 'Download Elysium on the App Store',
             position: 'right',
             className: 'nav-link_download-app-store'
           },
@@ -84,29 +87,33 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
+          // {
+          //   title: 'Docs',
+          //   items: [
+          //     {
+          //       label: 'Tutorial',
+          //       to: '/docs/intro',
+          //     },
+          //   ],
+          // },
           {
             title: 'Community',
             items: [
               {
                 label: 'Discord',
-                href: 'https://discord.gg/367dDPambf',
+                href: 'https://discord.gg/Dvdmu3saNp',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/mythologixr',
+                href: 'https://twitter.com/elysiumXR',
               },
               {
                 label: 'Instagram',
                 href: 'https://www.instagram.com/mythologi.es/',
+              },
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/channel/UCDC0xji3cOyUDBVSryyHh3Q',
               },
             ],
           },
@@ -114,8 +121,8 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/Mythologi-XR',
+                label: 'Privacy Policy',
+                href: '/docs/policies/privacy',
               },
             ],
           },

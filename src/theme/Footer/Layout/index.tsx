@@ -1,8 +1,9 @@
 import React from 'react';
 import clsx from 'clsx';
 import type {Props} from '@theme/Footer/Layout';
-import styles from './styles.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import customFields from '@site/src/customFields';
+import styles from './styles.module.css';
 
 const FooterContent = () => {
   return (
@@ -16,7 +17,7 @@ const FooterContent = () => {
       <p>
         Elysium is a no-code creator studio and player application for interactive augmented reality experiences.
       </p>
-      <a href="#">
+      <a href={customFields.iosAppUrl}>
         <img src={useBaseUrl('img/app-store-button.svg')} width="120" />
       </a>
     </div>
