@@ -134,6 +134,16 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+    plugins: [
+      async (context, options) => ({
+        name: 'docusaurus-tailwindcss',
+        configurePostCss(postcssOptions) {
+          postcssOptions.plugins.push(require('tailwindcss'))
+          postcssOptions.plugins.push(require('autoprefixer'))
+          return postcssOptions
+        }
+      })
+    ]
 };
 
 module.exports = config;
