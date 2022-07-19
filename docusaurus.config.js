@@ -135,14 +135,39 @@ const config = {
       },
     }),
     plugins: [
-      async (context, options) => ({
-        name: 'docusaurus-tailwindcss',
-        configurePostCss(postcssOptions) {
-          postcssOptions.plugins.push(require('tailwindcss'))
-          postcssOptions.plugins.push(require('autoprefixer'))
-          return postcssOptions
+      async function docusaurusTailwindCss() {
+        return {
+          name: 'docusaurus-tailwindcss',
+          configurePostCss(postcssOptions) {
+            // Appends TailwindCSS and AutoPrefixer.
+            postcssOptions.plugins.push(require("tailwindcss"));
+            postcssOptions.plugins.push(require("autoprefixer"));
+            return postcssOptions;
+          },
+          configureWebpack(config) {
+            return {
+              resolve: {
+                ...(config.resolve ?? {}),
+                fallback: { 
+                  fs: false,
+                  tls: false,
+                  net: false,
+                  path: false,
+                  zlib: false,
+                  http: false,
+                  https: false,
+                  stream: false,
+                  crypto: false,
+                  os: false,
+                  vm: false,
+                  util: false,
+                  url: false
+                }
+              },
+            }
+          }
         }
-      })
+      }
     ]
 };
 
