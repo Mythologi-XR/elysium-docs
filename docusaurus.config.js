@@ -70,12 +70,16 @@ const config = {
           src: 'img/elysium-logo-light.png',
         },
         items: [
-          // {
-          //   type: 'doc',
-          //   docId: 'intro',
-          //   position: 'left',
-          //   label: 'Tutorial',
-          // },
+          {
+            position: 'right',
+            label: 'Pricing',
+            to: '/pricing'
+          },
+          {
+            position: 'right',
+            to: '/docs/tutorial',
+            label: 'Docs',
+          },
           {
             href: customFields.iosAppUrl,
             label: 'Download Elysium on the App Store',
@@ -87,15 +91,19 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          // {
-          //   title: 'Docs',
-          //   items: [
-          //     {
-          //       label: 'Tutorial',
-          //       to: '/docs/intro',
-          //     },
-          //   ],
-          // },
+          {
+            title: 'Product',
+            items: [
+              {
+                label: 'Pricing',
+                to: '/pricing',
+              },
+              {
+                label: 'Docs',
+                to: '/docs/tutorial',
+              },
+            ],
+          },
           {
             title: 'Community',
             items: [
