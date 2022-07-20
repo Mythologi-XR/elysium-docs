@@ -93,5 +93,5 @@
   flex-shrink: 1;
   padding-right: 50px;
   white-space: nowrap;
-  flex-basis: inherit;
+  flex-basis: inherit !important;
 }
