@@ -6,7 +6,7 @@ import { PricingTable } from '@site/src/components/Pricing';
 export default function Pricing(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout description={"Elysium is free in beta"} title="Pricing">
+    <Layout description={"Get started for free!"} title="Pricing">
       <main className="dark">
         <PricingTable />
       </main>
