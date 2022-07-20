@@ -5,17 +5,17 @@ export const PricingTable = () => (
   <section className="bg-white dark:bg-gray-900">
     <div className="py-8 px-4 mx-auto max-w-screen-md lg:py-16 lg:px-6">
       <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Elysium Pricing</h2>
+        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Get started for free</h2>
         <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-200">
-          We're committed to maintaining a generous personal plan that will remain free beyond the beta period.
+          All the features and space you need to start building and publishing.
         </p>
       </div>
       <div className="space-y-8 lg:grid lg:grid-cols-2 sm:gap-6 xl:gap-10 lg:space-y-0">
         <PricingCard 
           title='Personal'
-          description='All the features and space you need to start building and publishing.'
+          description="We're committed to maintaining a generous personal plan that will remain free forever."
           price='Free'
-          pricePeriod='for life!'
+          pricePeriod='for good!'
           items={[
             {
               description: 'One private world',
@@ -45,7 +45,7 @@ export const PricingTable = () => (
         />
         <PricingCard 
           title='Professional & Enterprise'
-          description="We're still working on our commercial pricing and features."
+          description="We're still working on pricing and features for professional and enterprise users."
           price='TBD'
           pricePeriod=''
           items={[
@@ -57,9 +57,12 @@ export const PricingTable = () => (
               description: 'Upload & publish more assets',
               included: true
             },
-            
             {
               description: 'Collaborate with team members',
+              included: true
+            },
+            {
+              description: 'Advanced analytics and reporting',
               included: true
             },
             {
