@@ -1,6 +1,9 @@
 import React from 'react'
 import { PricingCard } from './PricingCard'
 
+export { PricingCard } from './PricingCard'
+export { PricingGrid } from './PricingGrid'
+
 export const PricingTable = () => (
   <section className="bg-white dark:bg-gray-900">
     <div className="py-8 px-4 mx-auto md:max-w-screen-md sm:max-w-screen-sm lg:py-16 lg:px-6">

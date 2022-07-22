@@ -72,7 +72,7 @@ const config = {
         items: [
           {
             position: 'right',
-            to: '/pricing',
+            to: '/docs/pricing',
             label: 'Pricing',
           },
           {
