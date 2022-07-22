@@ -14,6 +14,22 @@ module.exports = {
           700: 'var(--ifm-color-emphasis-300)',
           800: 'var(--ifm-footer-background-color)',
           900: 'var(--ifm-color-emphasis-100)',
+        },
+        rose: {
+          500: '#f66a68',
+        },
+        yellow: {
+          500: '#f5ad65',
+        },
+        cyan: {
+          500: '#4fded9',
+        },
+        sky: {
+          500: '#6ccfee',
+        },
+        purple: {
+          400: '#d794e2',
+          500: '#d066e2',
         }
       },
       fontFamily: {

@@ -72,18 +72,53 @@ const config = {
         items: [
           {
             position: 'right',
+            to: '/docs/guide',
+            label: 'Docs',
+            items: [
+              {
+                to: '/docs/guide',
+                label: 'Introduction',
+                activeBaseRegex: '/docs/guide$'
+              },
+              {
+                to: '/docs/guide/getting-started',
+                label: 'Getting Started',
+              },
+              {
+                to: '/docs/guide/reference',
+                label: 'Reference'
+              }
+            ]
+          },
+          {
+            position: 'right',
             to: '/docs/pricing',
             label: 'Pricing',
           },
           {
             position: 'right',
-            to: '/docs/guide',
-            label: 'Docs',
+            label: 'Support',
+            to: '/docs/support',
+            items: [
+              {
+                to: '/docs/support/faq',
+                label: 'FAQ'
+              },
+              {
+                to: '/docs/support',
+                label: 'Community',
+                activeBaseRegex: '/docs/support$'
+              },
+              {
+                to: '/docs/support/contact',
+                label: 'Contact us'
+              },
+            ]
           },
           {
+            label: 'Discord',
+            href: 'https://discord.gg/Dvdmu3saNp',
             position: 'right',
-            label: 'Support',
-            to: '/docs/support-community',
           },
           {
             href: customFields.iosAppUrl,
@@ -109,7 +144,7 @@ const config = {
               },
               {
                 label: 'Support',
-                to: '/docs/support-community',
+                to: '/docs/support',
               },
             ],
           },

@@ -8,9 +8,8 @@ const { tagline } = require('@site/docusaurus.config')
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout
-      description={tagline}>
-        <HomepageFeatures />
+    <Layout description={tagline}>
+      <HomepageFeatures />
     </Layout>
   );
 }
