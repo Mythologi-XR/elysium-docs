@@ -163,7 +163,7 @@ const config = {
             // /docs/oldDoc -> /docs/newDoc
             {
               from: '/docs',
-              to: '/docs/guide',
+              to: '/docs/guide/',
             },
           ]
         }
