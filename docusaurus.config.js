@@ -101,7 +101,7 @@ const config = {
             items: [
               {
                 label: 'Pricing',
-                to: '/pricing',
+                to: '/docs/pricing',
               },
               {
                 label: 'Docs',
