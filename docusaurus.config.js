@@ -72,13 +72,18 @@ const config = {
         items: [
           {
             position: 'right',
+            to: '/pricing',
             label: 'Pricing',
-            to: '/pricing'
           },
           {
             position: 'right',
-            to: '/docs/tutorial',
+            to: '/docs/guide',
             label: 'Docs',
+          },
+          {
+            position: 'right',
+            label: 'Support',
+            to: '/docs/support-community',
           },
           {
             href: customFields.iosAppUrl,
@@ -100,7 +105,11 @@ const config = {
               },
               {
                 label: 'Docs',
-                to: '/docs/tutorial',
+                to: '/docs/guide',
+              },
+              {
+                label: 'Support',
+                to: '/docs/support-community',
               },
             ],
           },
@@ -132,6 +141,10 @@ const config = {
                 label: 'Privacy Policy',
                 href: '/docs/policies/privacy',
               },
+              {
+                label: 'Press kit',
+                href: '/docs/press',
+              },
             ],
           },
         ],
@@ -143,6 +156,18 @@ const config = {
       },
     }),
     plugins: [
+      [
+        '@docusaurus/plugin-client-redirects',
+        {
+          redirects: [
+            // /docs/oldDoc -> /docs/newDoc
+            {
+              from: '/docs',
+              to: '/docs/guide',
+            },
+          ]
+        }
+      ],
       async function docusaurusTailwindCss() {
         return {
           name: 'docusaurus-tailwindcss',
