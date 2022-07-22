@@ -37,7 +37,7 @@ export const PricingCard = ({
   pricePeriod,
   items
 } : PricingCardProps ) => (
-  <div className="flex flex-col lg:p-6 p-8 md:p-12 mx-auto max-w-lg lg:text-center md:text-left text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 py-8 dark:bg-gray-800 dark:text-white">
+  <div className="flex flex-col lg:p-6 p-8 md:p-12 mx-auto max-w-lg lg:text-center md:text-left text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 py-8 dark:bg-gray-800 dark:text-white mb-8">
     <h3 className="mb-4 lg:text-2xl text-3xl font-semibold"><Markdown>{title}</Markdown></h3>
     <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400 wrap">
       <Markdown>{description}</Markdown>
