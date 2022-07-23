@@ -65,6 +65,11 @@ export const partners: Partner[] = [
     logo: 'partners/pme-montreal.jpg'
   },
   {
+    name: 'poly.pizza',
+    url: 'https://poly.pizza',
+    logo: 'partners/polypizza.jpg'
+  },
+  {
     name: 'POP Montreal',
     url: 'https://popmontreal.com/',
     logo: 'partners/pop-montreal.jpg'
