@@ -9,7 +9,7 @@ export default function Navbar(): JSX.Element {
   return (
     <NavbarLayout>
       <Head>
-        <meta property="og:img" content={`${url}/img/elysium-og.jpg`} />
+        <meta property="og:image" content={`${url}/img/elysium-og.jpg`} />
       </Head>
       <NavbarContent />
     </NavbarLayout>
