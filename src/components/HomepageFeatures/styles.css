@@ -3,7 +3,11 @@
 }
 
 .text-shadow-light {
-  text-shadow: 0 5px 20px rgb(255 255 255 / 70%)
+  text-shadow: 2px -2px 12px rgb(220 220 220 / 94%), 11px 12px 20px rgb(220 220 220 / 82%);
+}
+
+.text-shadow-light-softer {
+  text-shadow: 2px -2px 12px rgb(220 220 220 / 70%), 11px 12px 20px rgb(220 220 220 / 60%);
 }
 
 .app-img {
@@ -22,4 +26,10 @@
   .app-img {
     transform: translate(-38%, 27px);
   }
+}
+
+@media (max-height: 670px) {
+  .hero-container {
+    max-height: none;
+  } 
 }
