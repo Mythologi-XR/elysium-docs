@@ -22,6 +22,7 @@
     "autoprefixer": "^10.4.7",
     "browserify-fs": "^1.0.0",
     "clsx": "^1.1.1",
+    "dotenv": "^16.0.1",
     "markdown-to-jsx": "^7.1.7",
     "postcss": "^8.4.14",
     "prism-react-renderer": "^1.3.3",

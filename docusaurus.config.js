@@ -1,16 +1,18 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+require('dotenv').config();
+
 const customFields = require('./src/customFields');
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
-const config = {
-  title: 'Elysium',
-  tagline: 'Elysium is a no-code creator studio and player application for interactive augmented reality experiences.',
-  url: 'https://elysium.ar/',
+module.exports = {
+  title: 'Elysium - Build for AR. In AR.',
+  tagline: 'Elysium is a new app for situated, no-code AR worldbuilding, publishing and discovery. Create interactive AR experiences. Upload, import & collect 3D assets. Localize your work on the map. Discover nearby content from other creators.',
+  url: process.env.DOCUSAURUS_URL,
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -238,5 +240,3 @@ const config = {
       }
     ]
 };
-
-module.exports = config;
