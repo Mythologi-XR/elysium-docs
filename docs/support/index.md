@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Community
+# Contact us
 
 We have lots of ways for you to get support and inspiration from our team and our growing community of creators.
 
@@ -10,6 +10,6 @@ We have lots of ways for you to get support and inspiration from our team and ou
 
 Join us on the public [Elysium Discord Server](https://discord.gg/Dvdmu3saNp) to chat with the team and other Elysium users.
 
-## Creator Program
+# Email
 
-## Developer Program
+You can also email us at: human@elysium.ar

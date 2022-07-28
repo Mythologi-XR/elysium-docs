@@ -103,18 +103,18 @@ module.exports = {
             to: '/docs/support',
             items: [
               {
+                to: '/docs/support',
+                label: 'Contact us'
+              },
+              {
                 to: '/docs/support/faq',
                 label: 'FAQ'
               },
-              {
-                to: '/docs/support',
-                label: 'Community',
-                activeBaseRegex: '/docs/support$'
-              },
-              {
-                to: '/docs/support/contact',
-                label: 'Contact us'
-              },
+              // {
+              //   to: '/docs/support',
+              //   label: 'Community',
+              //   activeBaseRegex: '/docs/support$'
+              // },
             ]
           },
           {
