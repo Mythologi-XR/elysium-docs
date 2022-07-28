@@ -1,0 +1,35 @@
+.text-shadow {
+  text-shadow: 0 2px 40px rgb(0 0 0 / 20%)
+}
+
+.text-shadow-light {
+  text-shadow: 2px -2px 12px rgb(220 220 220 / 94%), 11px 12px 20px rgb(220 220 220 / 82%);
+}
+
+.text-shadow-light-softer {
+  text-shadow: 2px -2px 12px rgb(220 220 220 / 70%), 11px 12px 20px rgb(220 220 220 / 60%);
+}
+
+.app-img {
+  position: absolute;
+  z-index: 1;
+  width: 1419px;
+  max-width: none;
+  transform: translate(-41%, 37px);
+}
+
+.app-img-container {
+  min-height: 412px;
+}
+
+@media (min-width: 768px) { 
+  .app-img {
+    transform: translate(-38%, 27px);
+  }
+}
+
+@media (max-height: 670px) {
+  .hero-container {
+    max-height: none;
+  } 
+}
