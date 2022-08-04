@@ -119,7 +119,7 @@ module.exports = {
           },
           {
             label: 'Discord',
-            href: 'https://discord.gg/Dvdmu3saNp',
+            href: 'https://discord.gg/gYMKNYHJRJ',
             position: 'right',
           },
           {
@@ -155,7 +155,7 @@ module.exports = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discord.gg/Dvdmu3saNp',
+                href: 'https://discord.gg/gYMKNYHJRJ',
               },
               {
                 label: 'Twitter',

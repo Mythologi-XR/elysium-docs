@@ -73,7 +73,7 @@ export const PricingTable = () => (
               included: true
             },
             {
-              description: 'Get in touch on [Discord](https://discord.gg/Dvdmu3saNp) with your ideas!',
+              description: 'Get in touch on [Discord](https://discord.gg/gYMKNYHJRJ) with your ideas!',
               included: true
             },
           ]}
