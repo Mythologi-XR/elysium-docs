@@ -6,8 +6,11 @@ import InstaLogo from '../../static/img/instagram-new-outline.svg'
 import LinkedinLogo from '../../static/img/linkedin-solid.svg'
 import TwitterLogo from '../../static/img/twitter-solid.svg'
 import { PopupButton } from '@typeform/embed-react'
+import { useMediaQuery } from 'react-responsive'
 
 export default function App() {
+
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
   return (
     <div className={styles.background}>
@@ -22,13 +25,17 @@ export default function App() {
       
       {/* elysium logo */}
       <div className='absolute left-0 top-0 z-50 flex flex-row mt-[.6rem] ml-[.2rem] '>
+        {
+         !isMobile ?
         <img src={useBaseUrl('img/elysium-logo-light.png')} width="300"/>
+        : <img src={useBaseUrl('img/elysium-logo-light-mob.png')} width="97"/>
+        }
         {/* <img src={useBaseUrl('img/Elysium-Full_dark.png')} width="300"/> */}
       </div>
 
       {/* main content */}
       <div className='h-full w-full flex justify-center content-center flex-wrap'>
-        <div className={`z-50 backdrop-blur-md bg-[rgb(234,255,195)]/20 self-center p-10 md:rounded-[3rem] flex flex-col align-center content-center ${styles.unselectable}`} >
+        <div className={`z-50 backdrop-blur-md bg-[rgb(234,255,195)]/20 self-center p-10 rounded-[3rem] flex flex-col align-center content-center ${styles.unselectable} mx-5`} >
           <span className={`text-center ${styles.heading}`}>
             Shape your reality.
           </span>
