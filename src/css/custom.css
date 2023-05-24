@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'MonumentExtended';
+    src: local('MonumentExtended'),
+    url('../fonts/MonumentExtended/PPMonumentExtended-Regular.woff') format('woff');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Noto+Sans+Mono:wght@300&display=swap');
+
+
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -35,6 +44,11 @@
   --ifm-footer-background-color: #303846;
   --ifm-navbar-padding-horizontal: 10px;
   --ifm-navbar-padding-vertical: 16px;
+}
+
+
+body {
+  overflow-x: hidden;
 }
 
 .navbar__link {
