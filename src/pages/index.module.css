@@ -47,7 +47,7 @@
     background-image:
       linear-gradient(to right, rgb(208, 218, 237) .5px, transparent .5px),
       linear-gradient(to bottom, rgb(208, 218, 237) .5px, transparent .5px);
-    min-height: 100vh;
+    height: 100%;
     width: 100%;
     z-index: 10;
 }
