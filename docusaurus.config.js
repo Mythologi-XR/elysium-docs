@@ -103,23 +103,23 @@ module.exports = {
             to: '/docs/support',
             items: [
               {
+                to: '/docs/support',
+                label: 'Contact us'
+              },
+              {
                 to: '/docs/support/faq',
                 label: 'FAQ'
               },
-              {
-                to: '/docs/support',
-                label: 'Community',
-                activeBaseRegex: '/docs/support$'
-              },
-              {
-                to: '/docs/support/contact',
-                label: 'Contact us'
-              },
+              // {
+              //   to: '/docs/support',
+              //   label: 'Community',
+              //   activeBaseRegex: '/docs/support$'
+              // },
             ]
           },
           {
             label: 'Discord',
-            href: 'https://discord.gg/Dvdmu3saNp',
+            href: 'https://discord.gg/gYMKNYHJRJ',
             position: 'right',
           },
           {
@@ -155,7 +155,7 @@ module.exports = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discord.gg/Dvdmu3saNp',
+                href: 'https://discord.gg/gYMKNYHJRJ',
               },
               {
                 label: 'Twitter',
