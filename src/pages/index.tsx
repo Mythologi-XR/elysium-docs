@@ -28,7 +28,7 @@ export default function App() {
 
       {/* main content */}
       <div className='h-full w-full flex justify-center content-center flex-wrap'>
-        <div className={`z-50 backdrop-blur-md bg-[rgb(234,255,195)]/20 self-center p-10 rounded-[3rem] flex flex-col align-center content-center ${styles.unselectable}`} >
+        <div className={`z-50 backdrop-blur-md bg-[rgb(234,255,195)]/20 self-center p-10 md:rounded-[3rem] flex flex-col align-center content-center ${styles.unselectable}`} >
           <span className={`text-center ${styles.heading}`}>
             Shape your reality.
           </span>

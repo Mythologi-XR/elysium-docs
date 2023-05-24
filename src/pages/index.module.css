@@ -5,7 +5,7 @@
 
 .copy {
   font-family: "Noto Sans Mono", 'Courier New', Courier, monospace;
-  font-size: 14 + 'px';
+  font-size: 12px;
 }
 
 .cta {
@@ -16,7 +16,7 @@
 
 .heading {
   font-family: 'MonumentExtended', 'Times New Roman', Times, serif;
-  font-size: 60px;
+  font-size: 40px;
   color: black;
 }
 
@@ -50,6 +50,16 @@
     height: 100vh;
     width: 100vw;
     z-index: 10;
+}
+
+@media screen and (min-width: 768px) {
+  .heading {
+    font-size: 60px;
+  }
+
+  .copy {
+    font-size: 14px;
+  }
 }
 
 .heroBanner {
