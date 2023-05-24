@@ -47,11 +47,11 @@ export default function App() {
             </PopupButton>
           </div>
         </div>
-        <div className='md:hidden flex absolute bottom-0 z-50 mb-3 mr-3 flex-row backdrop-blur-md bg-[rgb(234,255,195)]/20 rounded-full p-5 max-w-sm'>
-        <a href="https://www.instagram.com/elysium.xr/" target='_blank'><InstaLogo className='mr-4'/></a>
-        <a href="https://twitter.com/elysiumXR" target='_blank'><TwitterLogo className='mr-4'/></a>
-        <a href="https://www.linkedin.com/company/elysiumxr/" target='_blank'><LinkedinLogo className='mr-3'/></a>
-      </div>
+          <div className='md:hidden flex mt-8 z-50 mb-3 mr-3 flex-row backdrop-blur-md bg-[rgb(234,255,195)]/20 rounded-full p-5 max-w-sm'>
+          <a href="https://www.instagram.com/elysium.xr/" target='_blank'><InstaLogo className='mr-4'/></a>
+          <a href="https://twitter.com/elysiumXR" target='_blank'><TwitterLogo className='mr-4'/></a>
+          <a href="https://www.linkedin.com/company/elysiumxr/" target='_blank'><LinkedinLogo className='mr-3'/></a>
+        </div>
       </div>
 
       {/* spline component renders a container div and canvas element */}
