@@ -47,12 +47,17 @@
     background-image:
       linear-gradient(to right, rgb(208, 218, 237) .5px, transparent .5px),
       linear-gradient(to bottom, rgb(208, 218, 237) .5px, transparent .5px);
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    width: 100%;
     z-index: 10;
 }
 
 @media screen and (min-width: 768px) {
+  .background {
+    height: 100vh;
+    width: 100vw;
+  }
+
   .heading {
     font-size: 60px;
   }
