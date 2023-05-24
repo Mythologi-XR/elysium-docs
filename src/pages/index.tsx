@@ -30,7 +30,7 @@ export default function App() {
       </div>
 
       {/* main content */}
-      <div className='md:h-full h-screen w-full flex justify-center content-center flex-wrap mt-8 md:mt-0'>
+      <div className='md:h-full h-screen w-full flex justify-center content-center flex-wrap mt-16 md:mt-0'>
         <div className={`z-50 backdrop-blur-md bg-[rgb(234,255,195)]/20 self-center p-10 rounded-[3rem] flex flex-col align-center content-center ${styles.unselectable} mx-5`} >
           <span className={`text-center ${styles.heading}`}>
             Shape your reality.
