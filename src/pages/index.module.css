@@ -10,7 +10,7 @@
 
 .cta {
   font-family: 'MonumentExtended', 'Times New Roman', Times, serif;
-  font-size: 26px;
+  font-size: 20px;
   color: black;
 }
 
@@ -59,6 +59,10 @@
 
   .copy {
     font-size: 14px;
+  }
+
+  .cta {
+    font-size: 26px;
   }
 }
 
