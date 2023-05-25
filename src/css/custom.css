@@ -7,10 +7,14 @@
 @font-face {
     font-family: 'MonumentExtended';
     src: local('MonumentExtended'),
-    url('../fonts/MonumentExtended/PPMonumentExtended-Regular.woff') format('woff');
+    url('../fonts/MonumentExtended/PPMonumentExtended-Regular.woff') format('woff'),
+    url('../fonts/MonumentExtended/PPMonumentExtended-Regular.woff2') format('woff2'),
+    url('../fonts/MonumentExtended/PPMonumentExtended-Regular.ttf') format('truetype'),
+    url('../fonts/MonumentExtended/PPMonumentExtended-Regular.otf') format('opentype');
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Noto+Sans+Mono:wght@300&display=swap');
+
 
 html {
   height: 100% !important;
@@ -21,6 +25,7 @@ body {
 
 html, body {
   overflow: auto;
+  background-color: #F9F9F9 !important;
 }
 
 /**

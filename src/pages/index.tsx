@@ -6,11 +6,8 @@ import InstaLogo from '../../static/img/instagram-new-outline.svg'
 import LinkedinLogo from '../../static/img/linkedin-solid.svg'
 import TwitterLogo from '../../static/img/twitter-solid.svg'
 import { PopupButton } from '@typeform/embed-react'
-import { useMediaQuery } from 'react-responsive'
 
 export default function App() {
-
-  // const isDesktop = useMediaQuery({ query: '(max-width: 768px)' })
 
   return (
     <div className={styles.background}>
@@ -19,14 +16,14 @@ export default function App() {
       <div className='hidden md:flex absolute md:right-0 bottom-0 z-50 mb-3 mr-3 flex-row backdrop-blur-md bg-[rgb(234,255,195)]/20 rounded-full p-5 max-w-sm'>
         <a href="https://www.instagram.com/elysium.xr/" target='_blank'><InstaLogo className='mr-4'/></a>
         <a href="https://twitter.com/elysiumXR" target='_blank'><TwitterLogo className='mr-4'/></a>
-        <a href="https://www.linkedin.com/company/elysiumxr/" target='_blank'><LinkedinLogo className='mr-3'/></a>
+        <a href="https://www.linkedin.com/company/elysiumxr/" target='_blank'><LinkedinLogo className='mr-4'/></a>
+        <a href="https://spline.design/" target="_blank"><img src={useBaseUrl('img/spline_logo.png')} width="40" height="40" /></a>
       </div>
       
       {/* elysium logo */}
       <div className='absolute left-0 top-0 z-50 flex flex-row mt-[.6rem] ml-[.2rem] '>
         <img src={useBaseUrl('img/elysium-logo-light.png')} width="300" className='hidden md:inline-block'/>
         <img src={useBaseUrl('img/elysium-logo-light-mob.png')} width="97" className='md:hidden inline-block'/>
-        {/* <img src={useBaseUrl('img/Elysium-Full_dark.png')} width="300"/> */}
       </div>
 
       {/* main content */}
@@ -50,7 +47,8 @@ export default function App() {
           <div className='md:hidden flex mt-8 z-50 mb-3 mr-3 flex-row backdrop-blur-md bg-[rgb(234,255,195)]/20 rounded-full p-5 max-w-sm'>
           <a href="https://www.instagram.com/elysium.xr/" target='_blank'><InstaLogo className='mr-4'/></a>
           <a href="https://twitter.com/elysiumXR" target='_blank'><TwitterLogo className='mr-4'/></a>
-          <a href="https://www.linkedin.com/company/elysiumxr/" target='_blank'><LinkedinLogo className='mr-3'/></a>
+          <a href="https://www.linkedin.com/company/elysiumxr/" target='_blank'><LinkedinLogo className='mr-4'/></a>
+          <a href="https://spline.design/" target="_blank"><img src={useBaseUrl('img/spline_logo.png')} width="40" height="40" /></a>
         </div>
       </div>
 
