@@ -195,18 +195,18 @@ module.exports = {
       },
     }),
     plugins: [
-      [
-        '@docusaurus/plugin-client-redirects',
-        {
-          redirects: [
-            // /docs/oldDoc -> /docs/newDoc
-            {
-              from: '/docs',
-              to: '/docs/guide/',
-            },
-          ]
-        }
-      ],
+      // [
+        // '@docusaurus/plugin-client-redirects',
+        // {
+        //   redirects: [
+        //     // /docs/oldDoc -> /docs/newDoc
+        //     {
+        //       from: '/docs',
+        //       to: '/docs/guide/',
+        //     },
+        //   ]
+        // }
+      // ],
       async function docusaurusTailwindCss() {
         return {
           name: 'docusaurus-tailwindcss',
