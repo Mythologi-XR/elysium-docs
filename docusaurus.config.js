@@ -39,6 +39,7 @@ module.exports = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: '/',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -74,40 +75,41 @@ module.exports = {
         items: [
           {
             position: 'right',
-            to: '/docs/guide',
+            to: '/',
             label: 'Docs',
             items: [
               {
-                to: '/docs/guide',
+                to: '/',
                 label: 'Introduction',
-                activeBaseRegex: '/docs/guide$'
+                activeBaseRegex: '/$'
               },
               {
-                to: '/docs/guide/getting-started',
+                to: '/guide/getting-started',
                 label: 'Getting Started',
               },
               {
-                to: '/docs/guide/reference',
+                to: '/guide/reference',
                 label: 'Reference'
               }
             ]
           },
           {
             position: 'right',
-            to: '/docs/pricing',
+            to: '/pricing',
             label: 'Pricing',
           },
           {
             position: 'right',
             label: 'Support',
-            to: '/docs/support',
+            to: '/support',
             items: [
               {
-                to: '/docs/support',
-                label: 'Contact us'
+                to: '/support',
+                label: 'Contact us',
+                activeBaseRegex: '/support$'
               },
               {
-                to: '/docs/support/faq',
+                to: '/support/faq',
                 label: 'FAQ'
               },
               // {
@@ -138,15 +140,15 @@ module.exports = {
             items: [
               {
                 label: 'Pricing',
-                to: '/docs/pricing',
+                to: '/pricing',
               },
               {
                 label: 'Docs',
-                to: '/docs/guide',
+                to: '/',
               },
               {
                 label: 'Support',
-                to: '/docs/support',
+                to: '/support',
               },
             ],
           },
@@ -176,11 +178,11 @@ module.exports = {
             items: [
               {
                 label: 'Privacy Policy',
-                href: '/docs/policies/privacy',
+                href: '/policies/privacy',
               },
               {
                 label: 'Press kit',
-                href: '/docs/press',
+                href: '/press',
               },
             ],
           },
