@@ -14,7 +14,7 @@ const FooterContent = () => {
         src={useBaseUrl('/img/elysium-logo-mono.svg')}
         title="Elysium - no-code world building studio for augmented reality"
       />
-      <p>
+      <p className='my-5'>
         Elysium is a no-code creator studio and player application for interactive augmented reality experiences.
       </p>
       <a href={customFields.iosAppUrl}>
