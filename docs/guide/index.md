@@ -13,7 +13,7 @@ slug: /
 
 ELYSIUM is a new paradigm for creating immersive digital experiences in the real world.
 
-It is a creation toolkit and a cloud platform that allows anyone to build their own worlds in agumented reality in real-time and share it with others.
+It is a creation toolkit and a cloud platform that allows anyone to build their own worlds in augmented reality in real-time and share it with others.
 
 Through our unique system of no-code interactive tools, all users become creators in their own right, and can build worlds that tell _their_ story through interactive journeys in real spaces and locations. Beyond establishing connections, our interaction design engine: the GEIST Engine, allows you to create _relationships_ between people, places, the digital, and activity.
 
