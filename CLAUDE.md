@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with th
 
 ## Project Overview
 
-Elysium Docs is the documentation website for **Elysium** - an AR (Augmented Reality) worldbuilding app and platform by MYTHOLOGI Inc. The site is built with Docusaurus 2 and serves as the primary documentation, support, and marketing resource for the Elysium iOS app.
+Elysium Docs is the public documentation and resource site for the **ELYSIUM** platform—a comprehensive XR/AR ecosystem that spans web, mobile, and wearable interfaces. Built with Docusaurus 2, this site serves as the primary documentation, support, and marketing resource for the platform.
 
-Elysium enables no-code, geolocated, real-time AR worldbuilding where users can create interactive AR experiences, upload 3D assets, and share content with others.
+ELYSIUM enables no-code, geolocated, real-time AR worldbuilding where users can create interactive AR experiences, upload 3D assets, and share content with others across multiple devices and interfaces.
 
 ## Tech Stack
 
