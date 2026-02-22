@@ -15,34 +15,25 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-rc.1",
-    "@docusaurus/plugin-client-redirects": "^2.0.0-rc.1",
-    "@docusaurus/preset-classic": "^2.0.0-rc.1",
-    "@mdx-js/react": "^1.6.22",
-    "@react-three/drei": "^7.5.1",
-    "@react-three/fiber": "^7.0.6",
-    "@splinetool/r3f-spline": "^1.0.2",
-    "@splinetool/react-spline": "^2.2.6",
-    "@splinetool/runtime": "^0.9.336",
-    "@typeform/embed-react": "^2.21.0",
-    "autoprefixer": "^10.4.7",
-    "browserify-fs": "^1.0.0",
-    "clsx": "^1.1.1",
-    "dotenv": "^16.0.1",
+    "@docusaurus/core": "3.9.2",
+    "@docusaurus/plugin-client-redirects": "3.9.2",
+    "@docusaurus/preset-classic": "3.9.2",
+    "@mdx-js/react": "^3.0.0",
+    "@typeform/embed-react": "^4.11.0",
+    "autoprefixer": "^10.4.20",
+    "clsx": "^2.1.0",
+    "dotenv": "^16.4.7",
     "markdown-to-jsx": "^7.1.7",
-    "postcss": "^8.4.14",
-    "prism-react-renderer": "^1.3.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-markdown": "^8.0.3",
-    "react-responsive": "^9.0.2",
-    "tailwindcss": "^3.1.6",
-    "three": "^0.152.2"
+    "postcss": "^8.4.49",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-rc.1",
-    "@tsconfig/docusaurus": "^1.0.5",
-    "typescript": "^4.6.4"
+    "@docusaurus/module-type-aliases": "3.9.2",
+    "@docusaurus/tsconfig": "3.9.2",
+    "typescript": "~5.6.0"
   },
   "browserslist": {
     "production": [
@@ -55,10 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "browser": {
-    "fs": false,
-    "path": false,
-    "os": false
   }
 }

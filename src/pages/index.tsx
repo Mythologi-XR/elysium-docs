@@ -1,4 +1,3 @@
-import Spline from '@splinetool/react-spline';
 import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './index.module.css'
@@ -17,9 +16,8 @@ export default function App() {
         <a href="https://www.instagram.com/elysium.xr/" target='_blank'><InstaLogo className='mr-4'/></a>
         <a href="https://twitter.com/elysiumXR" target='_blank'><TwitterLogo className='mr-4'/></a>
         <a href="https://www.linkedin.com/company/elysiumxr/" target='_blank'><LinkedinLogo className='mr-4'/></a>
-        <a href="https://spline.design/" target="_blank"><img src={useBaseUrl('img/spline_logo.png')} width="40" height="40" /></a>
       </div>
-      
+
       {/* elysium logo */}
       <div className='absolute left-0 top-0 z-50 flex flex-row mt-[.6rem] ml-[.2rem] '>
         <img src={useBaseUrl('img/elysium-logo-light.png')} width="300" className='hidden md:inline-block'/>
@@ -48,12 +46,8 @@ export default function App() {
           <a href="https://www.instagram.com/elysium.xr/" target='_blank'><InstaLogo className='mr-4'/></a>
           <a href="https://twitter.com/elysiumXR" target='_blank'><TwitterLogo className='mr-4'/></a>
           <a href="https://www.linkedin.com/company/elysiumxr/" target='_blank'><LinkedinLogo className='mr-4'/></a>
-          <a href="https://spline.design/" target="_blank"><img src={useBaseUrl('img/spline_logo.png')} width="40" height="40" /></a>
         </div>
       </div>
-
-      {/* spline component renders a container div and canvas element */}
-      <Spline scene="https://prod.spline.design/53anxYhJwY5vn9g8/scene.splinecode" className={styles.spline}/>
     </div>
   );
 }

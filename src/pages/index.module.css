@@ -20,14 +20,6 @@
   color: black;
 }
 
-.spline {
-  height: 100%;
-  width: 100%;
-  z-index: 10;
-  position: absolute;
-  top: 0; 
-}
-
 .unselectable {
   -moz-user-select: -moz-none;
   -khtml-user-select: none;
@@ -45,6 +37,7 @@
     background-color: #F9F9F9;
     background-size: 20px 20px;
     background-image:
+      linear-gradient(135deg, rgba(215, 148, 226, 0.15) 0%, rgba(79, 222, 217, 0.1) 50%, rgba(108, 207, 238, 0.15) 100%),
       linear-gradient(to right, rgb(208, 218, 237) .5px, transparent .5px),
       linear-gradient(to bottom, rgb(208, 218, 237) .5px, transparent .5px);
     height: 100%;
@@ -56,14 +49,6 @@
   .background {
     height: 100vh;
     width: 100vw;
-  }
-
-  .spline {
-    height: 100vh;
-    width: 100vw;
-    z-index: 10;
-    position: absolute;
-    top: 0;
   }
 
   .heading {

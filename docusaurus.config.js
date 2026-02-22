@@ -5,8 +5,9 @@ require('dotenv').config();
 
 const customFields = require('./src/customFields');
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { themes } = require('prism-react-renderer');
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 module.exports = {
@@ -214,28 +215,6 @@ module.exports = {
             postcssOptions.plugins.push(require("autoprefixer"));
             return postcssOptions;
           },
-          configureWebpack(config) {
-            return {
-              resolve: {
-                ...(config.resolve ?? {}),
-                fallback: { 
-                  fs: false,
-                  tls: false,
-                  net: false,
-                  path: false,
-                  zlib: false,
-                  http: false,
-                  https: false,
-                  stream: false,
-                  crypto: false,
-                  os: false,
-                  vm: false,
-                  util: false,
-                  url: false
-                }
-              },
-            }
-          }
         }
       }
     ]
