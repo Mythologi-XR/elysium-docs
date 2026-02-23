@@ -4,7 +4,7 @@ import NavbarContent from '@theme/Navbar/Content';
 import Head from '@docusaurus/Head';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-export default function Navbar(): JSX.Element {
+export default function Navbar() {
   const { siteConfig: { url } } = useDocusaurusContext();
   return (
     <NavbarLayout>

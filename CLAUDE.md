@@ -1,94 +1,79 @@
-# CLAUDE.md
+# Elysium Docs
 
-This file provides guidance to Claude Code (claude.ai/code) when working with this repository.
+Documentation site for Elysium, a no-code AR world-building platform by MYTHOLOGI Inc.
 
-## Project Overview
+## Stack
 
-Elysium Docs is the public documentation and resource site for the **ELYSIUM** platform—a comprehensive XR/AR ecosystem that spans web, mobile, and wearable interfaces. Built with Docusaurus 2, this site serves as the primary documentation, support, and marketing resource for the platform.
+- **Framework:** Docusaurus v3.9.2 with React 18
+- **Styling:** Tailwind CSS v3 + Infima (Docusaurus's built-in CSS framework) + custom CSS
+- **Language:** TypeScript
+- **Package manager:** npm (do not use yarn)
 
-ELYSIUM enables no-code, geolocated, real-time AR worldbuilding where users can create interactive AR experiences, upload 3D assets, and share content with others across multiple devices and interfaces.
+## Commands
 
-## Tech Stack
-
-- **Framework**: Docusaurus 2 (v2.0.0-rc.1)
-- **UI**: React 17, TypeScript
-- **Styling**: TailwindCSS 3, custom CSS variables (Infima theme)
-- **Content**: MDX/Markdown documentation
-- **Build**: Yarn
-
-## Common Commands
-
-```bash
-# Install dependencies
-yarn
-
-# Start development server (hot reload)
-yarn start
-
-# Build static site to /build directory
-yarn build
-
-# Type checking
-yarn typecheck
-
-# Serve production build locally
-yarn serve
-
-# Clear build cache
-yarn clear
-```
+- `npm start` — Dev server with hot reload (default port 3000)
+- `npm run build` — Production build
+- `npm run serve` — Serve production build locally
+- `npm run typecheck` — Run TypeScript type checking (`tsc`)
+- `npx docusaurus clear` — Clear Docusaurus cache (useful when styles or config changes aren't reflected)
 
 ## Project Structure
 
 ```
-elysium-docs/
-├── docs/                    # Documentation content (Markdown/MDX)
-│   ├── guide/               # User guides and reference docs
-│   │   └── reference/       # Detailed reference documentation
-│   ├── pricing/             # Pricing page
-│   ├── support/             # Support and FAQ
-│   ├── policies/            # Privacy policy
-│   └── press/               # Press kit
-├── src/
-│   ├── components/          # React components
-│   │   ├── HomepageFeatures/# Homepage sections and partner logos
-│   │   └── Pricing/         # Pricing cards and grid
-│   ├── theme/               # Docusaurus theme overrides
-│   │   ├── Footer/          # Custom footer layout
-│   │   └── Navbar/          # Custom navbar
-│   ├── css/                 # Global styles (custom.css)
-│   ├── customFields.js      # Custom config fields (iOS app URL)
-│   └── pages/               # Additional pages
-├── static/                  # Static assets (images, favicon)
-├── docusaurus.config.js     # Main Docusaurus configuration
-├── sidebars.js              # Sidebar navigation structure
-└── tailwind.config.js       # Tailwind configuration
+docs/                    # Markdown/MDX content
+  guide/                 # Main documentation (getting-started, reference/)
+  pricing/               # Pricing page (uses PricingCard component)
+  support/               # Support & FAQ
+  policies/              # Privacy policy, etc.
+  press/                 # Press kit
+src/
+  components/            # React components (HomepageFeatures, Pricing/)
+  css/custom.css         # Global styles, design tokens, glassmorphism
+  customFields.js        # Shared config values (iOS app URL)
+  fonts/                 # MonumentExtended custom font
+  pages/                 # Standalone pages (index.tsx = homepage)
+  theme/                 # Swizzled Docusaurus components (Navbar, Footer)
+static/img/              # Images, logos, SVGs
+docusaurus.config.js     # Site config (navbar, footer, plugins, redirects)
+sidebars.js              # Sidebar structure (auto-generated from docs/)
+tailwind.config.js       # Tailwind config with custom theme tokens
 ```
 
-## Key Configuration Files
+## Design System
 
-- **docusaurus.config.js**: Main config including navbar, footer, theme settings, and plugins
-- **sidebars.js**: Defines sidebar navigation structure (auto-generated from folder structure)
-- **tailwind.config.js**: Custom color palette mapping to Infima CSS variables
-- **src/customFields.js**: Custom fields like iOS App Store URL
+### CSS Custom Properties (defined in `src/css/custom.css`)
 
-## Development Notes
+- `--global-radius: 12px` — Single source of truth for all border radii. Feeds into `--ifm-global-radius` (Infima) and `--glass-radius` (glassmorphism). Tailwind `rounded-*` classes also derive from this via `tailwind.config.js`.
+- `--glass-bg`, `--glass-border`, `--glass-blur`, `--glass-radius` — Glassmorphism tokens with dark mode overrides in `[data-theme='dark']`.
+- Apply `.glass` class for the reusable glassmorphism effect (background blur + transparent border).
 
-- The site uses **dark mode only** (light mode switch is disabled)
-- Docs are served at the root URL (`/`) via `routeBasePath: '/'`
-- TailwindCSS is integrated via a custom Docusaurus plugin in the config
-- Tailwind colors are mapped to Infima CSS variables for theme consistency
-- Environment variables are loaded via dotenv (see `.env.example`)
-- The `DOCUSAURUS_URL` env var sets the site URL for builds
+### Tailwind + Infima
 
-## Adding Documentation
+Tailwind is integrated via an inline PostCSS plugin in `docusaurus.config.js`. Preflight is disabled (`corePlugins: { preflight: false }`) to avoid conflicts with Infima. Tailwind's color palette maps to Infima CSS variables for dark mode compatibility (see `tailwind.config.js` `colors.gray`).
 
-1. Add Markdown/MDX files to the appropriate `docs/` subdirectory
-2. Use frontmatter for metadata: `sidebar_position`, `title`, `slug`
-3. Sidebars auto-generate from folder structure (see `sidebars.js`)
+### Dark Mode
 
-## Component Patterns
+Dark mode is the default and the only mode (switch is disabled in `docusaurus.config.js`). The `[data-theme='dark']` selector controls Infima variables and glassmorphism token overrides.
 
-- React components use TypeScript (`.tsx`)
-- Styling combines TailwindCSS utilities with CSS modules (`*.module.css`)
-- Theme overrides are in `src/theme/` following Docusaurus swizzle patterns
+### Fonts
+
+- **Manrope** — Primary font (`--ifm-font-family-base`), loaded from Google Fonts
+- **MonumentExtended** — Display font for homepage headings, loaded locally from `src/fonts/`
+- **Noto Sans Mono** — Monospace font for homepage copy
+
+## Key Conventions
+
+- Sidebar is auto-generated from the `docs/` folder structure using `_category_.json` files
+- The homepage (`src/pages/index.tsx`) is a standalone page, not part of the docs
+- Swizzled theme components (Navbar, Footer) live in `src/theme/` — edit these to customize layout
+- Environment variables are loaded via `dotenv` in `docusaurus.config.js` (`DOCUSAURUS_URL`)
+- `/docs` redirects to `/docs/guide/` via the client-redirects plugin
+
+---
+
+## Cross-Repo Dependencies
+
+- **Standalone**: No runtime dependencies on other repos
+- **Documents**: The ELYSIUM platform (covers features from `elysium-web-app`, `elysium-app`, and the broader ecosystem)
+
+> For cross-repo workspace context, see `~/Documents/GitHub/CLAUDE.md`

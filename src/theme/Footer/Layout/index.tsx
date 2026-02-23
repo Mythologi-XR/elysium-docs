@@ -29,7 +29,7 @@ export default function FooterLayout({
   links,
   logo,
   copyright,
-}: Props): JSX.Element {
+}: Props) {
   return (
     <footer
       className={clsx('footer', {

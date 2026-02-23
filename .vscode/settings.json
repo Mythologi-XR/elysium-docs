@@ -2,5 +2,8 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "search.exclude": {
+    "**/node_modules": false
+  }
 }

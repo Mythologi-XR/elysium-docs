@@ -34,6 +34,17 @@ module.exports = {
       },
       fontFamily: {
         sans: 'var(--ifm-font-family-base)'
+      },
+      borderRadius: {
+        DEFAULT: 'var(--global-radius)',
+        sm: 'calc(var(--global-radius) * 0.5)',
+        md: 'calc(var(--global-radius) * 0.67)',
+        lg: 'var(--global-radius)',
+        xl: 'calc(var(--global-radius) * 1.33)',
+        '2xl': 'calc(var(--global-radius) * 1.5)',
+        '3xl': 'calc(var(--global-radius) * 2)',
+        full: '9999px',
+        none: '0',
       }
     },
   },
