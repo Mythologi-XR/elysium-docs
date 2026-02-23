@@ -68,3 +68,12 @@ Dark mode is the default and the only mode (switch is disabled in `docusaurus.co
 - Swizzled theme components (Navbar, Footer) live in `src/theme/` — edit these to customize layout
 - Environment variables are loaded via `dotenv` in `docusaurus.config.js` (`DOCUSAURUS_URL`)
 - `/docs` redirects to `/docs/guide/` via the client-redirects plugin
+
+---
+
+## Cross-Repo Dependencies
+
+- **Standalone**: No runtime dependencies on other repos
+- **Documents**: The ELYSIUM platform (covers features from `elysium-web-app`, `elysium-app`, and the broader ecosystem)
+
+> For cross-repo workspace context, see `~/Documents/GitHub/CLAUDE.md`
