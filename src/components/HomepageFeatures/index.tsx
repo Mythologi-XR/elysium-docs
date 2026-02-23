@@ -26,7 +26,7 @@ const Hero = () => (
   </div>
 )
 
-export default function HomepageFeatures(): JSX.Element {
+export default function HomepageFeatures() {
   return (
     <>
       <section className="min-h-[calc(100vh_-_82px)] max-h-[calc(100vh_+_50px)] bg-gradient-to-tr from-rose-500 via-yellow-500 to-sky-500 flex flex-1 flex-direction-row align-items-center justify-items-center overflow-hidden">
