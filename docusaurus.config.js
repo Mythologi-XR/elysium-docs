@@ -13,7 +13,7 @@ const darkCodeTheme = themes.dracula;
 module.exports = {
   title: 'Elysium - Build for AR. In AR.',
   tagline: 'Elysium is a new app for situated, no-code AR worldbuilding, publishing and discovery. Create interactive AR experiences. Upload, import & collect 3D assets. Localize your work on the map. Discover nearby content from other creators.',
-  url: process.env.DOCUSAURUS_URL,
+  url: 'https://docs.elysium.ar',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -87,6 +87,10 @@ module.exports = {
               {
                 to: '/guide/getting-started',
                 label: 'Getting Started',
+              },
+              {
+                to: '/guide/card-designer',
+                label: 'Card Designer',
               },
               {
                 to: '/guide/reference',
