@@ -1,9 +1,9 @@
 {
   "label": "Card Designer",
-  "position": 3,
+  "position": 2,
   "link": {
     "type": "generated-index",
-    "slug": "/guide/card-designer",
+    "slug": "/alpha-lab/card-designer",
     "description": "Learn how to design stunning AR and Loyalty cards with the ELYSIUM Card Designer."
   }
 }

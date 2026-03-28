@@ -1,0 +1,9 @@
+{
+  "label": "ELYSIUM PLAY",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "slug": "/elysium-play",
+    "description": "Cross-platform AR play and discovery."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "label": "GEIST Engine",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "slug": "/geist-engine",
+    "description": "Interaction engine for compelling AR experiences and beyond."
+  }
+}

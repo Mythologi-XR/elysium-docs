@@ -1,0 +1,9 @@
+{
+  "label": "ALPHA Lab",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "slug": "/alpha-lab",
+    "description": "Experimental features and creative tools."
+  }
+}

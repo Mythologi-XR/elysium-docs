@@ -4,10 +4,18 @@
 require('dotenv').config();
 
 const customFields = require('./src/customFields');
+const { pillars } = require('./docs/publishing/docFlags');
 
 const { themes } = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
+
+/**
+ * Helper: only include a navbar item if its pillar flag is enabled.
+ */
+function navItemIf(flag, item) {
+  return pillars[flag] ? item : null;
+}
 
 /** @type {import('@docusaurus/types').Config} */
 module.exports = {
@@ -16,18 +24,24 @@ module.exports = {
   url: 'https://docs.elysium.ar',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'warn',
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownImages: 'warn',
+    },
+  },
   favicon: 'img/favicon.ico',
-  customFields,
+  customFields: {
+    ...customFields,
+    featureFlags: pillars,
+  },
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Mythologi-XR', // Usually your GitHub org/user name.
-  projectName: 'elysium-docs', // Usually your repo name.
+  organizationName: 'Mythologi-XR',
+  projectName: 'elysium-docs',
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -41,18 +55,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   // Please change this to your repo.
-        //   // Remove this to remove the "edit this page" links.
-        //   editUrl:
-        //     'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -80,23 +83,22 @@ module.exports = {
             label: 'Docs',
             items: [
               {
-                to: '/',
+                to: '/introduction',
                 label: 'Introduction',
-                activeBaseRegex: '/$'
               },
               {
-                to: '/guide/getting-started',
+                to: '/getting-started',
                 label: 'Getting Started',
               },
-              {
-                to: '/guide/card-designer',
+              navItemIf('alpha-lab', {
+                to: '/alpha-lab/card-designer',
                 label: 'Card Designer',
-              },
-              {
-                to: '/guide/reference',
-                label: 'Reference'
-              }
-            ]
+              }),
+              navItemIf('reference', {
+                to: '/reference',
+                label: 'Reference',
+              }),
+            ].filter(Boolean),
           },
           {
             position: 'right',
@@ -117,11 +119,6 @@ module.exports = {
                 to: '/support/faq',
                 label: 'FAQ'
               },
-              // {
-              //   to: '/docs/support',
-              //   label: 'Community',
-              //   activeBaseRegex: '/docs/support$'
-              // },
             ]
           },
           {
@@ -149,7 +146,7 @@ module.exports = {
               },
               {
                 label: 'Docs',
-                to: '/',
+                to: '/introduction',
               },
               {
                 label: 'Support',
@@ -200,23 +197,10 @@ module.exports = {
       },
     }),
     plugins: [
-      // [
-        // '@docusaurus/plugin-client-redirects',
-        // {
-        //   redirects: [
-        //     // /docs/oldDoc -> /docs/newDoc
-        //     {
-        //       from: '/docs',
-        //       to: '/docs/guide/',
-        //     },
-        //   ]
-        // }
-      // ],
       async function docusaurusTailwindCss() {
         return {
           name: 'docusaurus-tailwindcss',
           configurePostCss(postcssOptions) {
-            // Appends TailwindCSS and AutoPrefixer.
             postcssOptions.plugins.push(require("tailwindcss"));
             postcssOptions.plugins.push(require("autoprefixer"));
             return postcssOptions;

@@ -10,7 +10,7 @@ Elysium is currently only available for iOS. You can find the application by sea
 
 Download Elysium for iOS here:
 
-[![Download Elysium in the app store](../../static/img/app-store-button.svg)](https://apps.apple.com/app/id1594239469)
+[![Download Elysium in the app store](/img/app-store-button.svg)](https://apps.apple.com/app/id1594239469)
 
 ## Modes
 

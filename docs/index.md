@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Introduction
 id: my-home-doc
-slug: /
+slug: /introduction
 ---
 
 # Introducing Elysium

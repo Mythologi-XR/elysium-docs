@@ -1,0 +1,9 @@
+{
+  "label": "ELYSIUM Analytics",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "slug": "/analytics",
+    "description": "Real-time behavioural analytics designed for AI."
+  }
+}

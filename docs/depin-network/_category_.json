@@ -1,0 +1,9 @@
+{
+  "label": "ELYSIUM DePIN Network",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "slug": "/depin-network",
+    "description": "Federated system as platform."
+  }
+}

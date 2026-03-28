@@ -40,7 +40,7 @@ export default function App() {
             <PopupButton id="BzV7hDhi" className={`self-center rounded-2xl bg-lime-100 md:hover:bg-cyan-200 md:hover:transition-all md:hover:ease-in-out border-solid border-white border-[1px] flex md:hover:duration-500 md:duration-500 cursor-pointer px-6 py-3 ${styles.cta}`}>
                 Join the waitlist
             </PopupButton>
-            <a href="/guide/getting-started" className={`self-center rounded-2xl bg-lime-100 md:hover:bg-cyan-200 md:hover:transition-all md:hover:ease-in-out border-solid border-white border-[1px] flex md:hover:duration-500 md:duration-500 cursor-pointer no-underline hover:no-underline text-black px-6 py-3 ${styles.cta}`}>
+            <a href="/introduction" className={`self-center rounded-2xl bg-lime-100 md:hover:bg-cyan-200 md:hover:transition-all md:hover:ease-in-out border-solid border-white border-[1px] flex md:hover:duration-500 md:duration-500 cursor-pointer no-underline hover:no-underline text-black px-6 py-3 ${styles.cta}`}>
                 View Documentation
             </a>
           </div>
