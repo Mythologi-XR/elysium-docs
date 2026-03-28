@@ -36,10 +36,13 @@ export default function App() {
           <span className={`text-black text-center self-center ${styles.copy}`}>
             Join the waitlist to receive updates about our next launch.
           </span>
-          <div className='self-center mt-9'>
+          <div className='self-center mt-9 flex flex-col md:flex-row gap-4 items-center'>
             <PopupButton id="BzV7hDhi" className={`self-center rounded-2xl bg-lime-100 md:hover:bg-cyan-200 md:hover:transition-all md:hover:ease-in-out border-solid border-white border-[1px] flex md:hover:duration-500 md:duration-500 cursor-pointer ${styles.cta}`}>
                 Join the waitlist
             </PopupButton>
+            <a href="/guide/" className={`self-center rounded-2xl bg-lime-100 md:hover:bg-cyan-200 md:hover:transition-all md:hover:ease-in-out border-solid border-white border-[1px] flex md:hover:duration-500 md:duration-500 cursor-pointer no-underline text-black ${styles.cta}`}>
+                View Documentation
+            </a>
           </div>
         </div>
           <div className='md:hidden flex mt-8 z-50 mb-3 mr-3 flex-row backdrop-blur-md bg-[rgb(234,255,195)]/20 rounded-full p-5 max-w-sm'>
