@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 # Saving, Exporting, and Sharing
@@ -19,8 +19,16 @@ For a more permanent backup, click **Save Project** in the export section of the
 To reload it later, just drag the `.ecard` file onto the Card Designer landing page or use the "Load Saved Project" option in the setup wizard.
 
 :::caution
-Auto-save uses your browser's local storage. If you clear your browser data, it's gone. Always save to a `.ecard` file if you want to keep your work safe.
+Auto-save uses your browser's local storage. If you clear your browser data, it's gone. Save to a `.ecard` file or [save to the cloud](./projects-and-cloud) to keep your work safe.
 :::
+
+### Save to the cloud
+
+If you have an [ELYSIUM account](./your-account), you can save your designs to the cloud for access from any device. Click **"Save to ELYSIUM"** in the sidebar to open the cloud save dialog.
+
+![Save to ELYSIUM button in the sidebar actions area with the ELYSIUM logo icon](/img/card-designer/74.png)
+
+For full details on cloud saving, project management, and the Projects panel, see [Projects and Cloud Save](./projects-and-cloud).
 
 ---
 
@@ -57,7 +65,9 @@ The export process has a few phases (Preparing, Exporting, Validating, Done). If
 
 ## Sharing your design
 
-Click the **Share** button in the export panel to generate a preview link. Anyone with the link can view your card in a full-screen 3D viewer — complete with camera presets, card flipping, and audio playback.
+### Quick share (same device)
+
+Click the **Share** button in the export panel to generate a quick local preview link. This stores your card in the browser and gives you a link to preview it.
 
 ![Share URL displayed below the Share button with the copy icon](/img/card-designer/42.png)
 
@@ -66,5 +76,9 @@ Click the **copy** icon to grab the link and share it wherever you like.
 ![Public share player as a viewer would see it — full-screen card, toolbar, watermark](/img/card-designer/43.png)
 
 :::note
-In the current version, share links only work on the **same browser and device** where they were created. Cross-device sharing is coming in a future update.
+Quick share links only work on the **same browser and device** where they were created. For cross-device sharing with password protection and collaboration features, see [Sharing and Privacy](./sharing-and-privacy).
 :::
+
+### Cloud sharing
+
+For sharing with anyone — on any device, with optional password protection, expiry dates, and collaboration features — use cloud sharing from the **Privacy & Sharing** panel in the right sidebar. See [Sharing and Privacy](./sharing-and-privacy) for the full guide.

@@ -44,7 +44,7 @@ The workspace has three main areas:
 |------|-------------|
 | **Left panel** | Your images, camera angles, backgrounds, and card content |
 | **Center canvas** | A live 3D preview of your card that updates as you make changes |
-| **Right panel** | Material finishes, lighting, visual effects, and export options |
+| **Right panel** | Material finishes, lighting, visual effects, export, projects, and privacy settings |
 
 ![Full workspace with labeled callouts for left panel, center canvas, right panel, and floating toolbar](/img/card-designer/8.png)
 

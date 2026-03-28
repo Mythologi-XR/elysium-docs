@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 10
 ---
 
 # Tips and Troubleshooting
@@ -45,7 +45,24 @@ The Card Designer is available in **English** and **French**. Click the globe ic
 - Update your graphics drivers
 
 ### My share link doesn't work for someone else
-This is expected in the current version — share links are stored locally in your browser and only work on the same device. Cross-device sharing is planned for a future update.
+
+**For local preview links** (created with the Share button in the Export panel): these only work on the same browser and device where they were created. Use [cloud sharing](./sharing-and-privacy) instead to share links that work for anyone.
+
+**For cloud share links**, check these common causes:
+- **"Expired"** — The link has passed its expiry date. Ask the creator to generate a new one
+- **"Revoked"** — The creator has permanently deactivated this link
+- **"Sharing disabled"** — The creator turned off sharing for this eCard
+- **"Too many attempts"** — You've exceeded 5 password attempts. Wait for the countdown timer to reset
+
+### I can't sign in or create an account
+- Double-check your email and password — passwords are case-sensitive
+- If your session expired, just sign in again (sessions refresh automatically but can time out after extended inactivity)
+- When creating an account, make sure your password is at least 8 characters and your email isn't already in use
+
+### My cloud save isn't working
+- **Upload seems stuck** — Check your internet connection and try again
+- **"Description is required"** — The description field is mandatory — fill it in before saving
+- **eCard not showing in the Projects panel** — Try searching for it, or make sure you're signed into the correct account
 
 ### GLB export shows errors
 
@@ -59,12 +76,18 @@ This is expected in the current version — share links are stored locally in yo
 
 ---
 
+## What's new
+
+Cloud save and cross-device sharing are now live! Check out:
+
+- [Your ELYSIUM Account](./your-account) — Create an account to unlock cloud features
+- [Projects and Cloud Save](./projects-and-cloud) — Save, manage, and load your eCards from the cloud
+- [Sharing and Privacy](./sharing-and-privacy) — Share links with password protection, expiry, collaboration, and claiming
+
 ## What's next?
 
 The Card Designer is actively being developed. Coming soon:
 
-- **Save to ELYSIUM** — Save your designs directly to the cloud for team collaboration and AR publishing
-- **Cross-device sharing** — Share links that work from any browser or device
 - **More card types and templates**
 
 Have questions or feedback? Join us on [Discord](https://discord.gg/mythologi) or check the [FAQ](/support/faq).
