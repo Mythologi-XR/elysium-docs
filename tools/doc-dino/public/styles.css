@@ -141,13 +141,13 @@ body::before {
 
 .new-cat-btn {
   display: flex; align-items: center; justify-content: center; gap: 4px;
-  width: 100%; padding: 12px; margin-top: 8px;
-  background: var(--surface); border: 1px dashed var(--border);
+  width: 100%; padding: 12px; margin-top: 8px; margin-bottom: 1em;
+  background: var(--surface); border: 1px dashed transparent;
   border-radius: var(--radius); color: var(--text-muted);
   font-family: inherit; font-size: 13px; cursor: pointer;
   transition: all 0.15s;
 }
-.new-cat-btn:hover { color: var(--accent); border-color: var(--accent); background: var(--surface-hover); }
+.new-cat-btn:hover, .new-cat-btn:active { color: var(--accent); border-color: var(--accent); background: var(--surface-hover); }
 
 /* ─── Page Items ─── */
 .page-item {
