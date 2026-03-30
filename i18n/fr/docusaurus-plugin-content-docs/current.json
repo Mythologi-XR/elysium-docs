@@ -8,39 +8,75 @@
     "description": "The label for category 'Introduction' in sidebar 'guide'"
   },
   "sidebar.guide.category.Getting Started": {
-    "message": "Getting Started",
+    "message": "Premiers pas",
     "description": "The label for category 'Getting Started' in sidebar 'guide'"
   },
+  "sidebar.guide.category.ELYSIUM PLAY": {
+    "message": "ELYSIUM PLAY",
+    "description": "The label for category 'ELYSIUM PLAY' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.ELYSIUM Creation App": {
+    "message": "Application de création ELYSIUM",
+    "description": "The label for category 'ELYSIUM Creation App' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.ELYSIUM Portal": {
+    "message": "Portail ELYSIUM",
+    "description": "The label for category 'ELYSIUM Portal' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.GEIST Engine": {
+    "message": "Moteur GEIST",
+    "description": "The label for category 'GEIST Engine' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.ELYSIUM X": {
+    "message": "ELYSIUM X",
+    "description": "The label for category 'ELYSIUM X' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.ELYSIUM Wallet": {
+    "message": "Portefeuille ELYSIUM",
+    "description": "The label for category 'ELYSIUM Wallet' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.ELYSIUM Analytics": {
+    "message": "Analytiques ELYSIUM",
+    "description": "The label for category 'ELYSIUM Analytics' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.ELYSIUM DePIN Network": {
+    "message": "Réseau DePIN ELYSIUM",
+    "description": "The label for category 'ELYSIUM DePIN Network' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.REALITY BRIDGE": {
+    "message": "REALITY BRIDGE",
+    "description": "The label for category 'REALITY BRIDGE' in sidebar 'guide'"
+  },
   "sidebar.guide.category.ALPHA Lab": {
-    "message": "ALPHA Lab",
+    "message": "Laboratoire ALPHA",
     "description": "The label for category 'ALPHA Lab' in sidebar 'guide'"
   },
   "sidebar.guide.category.Card Designer": {
-    "message": "Card Designer",
+    "message": "Concepteur de cartes",
     "description": "The label for category 'Card Designer' in sidebar 'guide'"
   },
   "sidebar.guide.category.Card Designer.link.generated-index.description": {
-    "message": "Learn how to design stunning AR and Loyalty cards with the ELYSIUM Card Designer.",
+    "message": "Apprenez à concevoir de magnifiques cartes AR et de fidélité avec le Concepteur de cartes ELYSIUM.",
     "description": "The generated-index page description for category 'Card Designer' in sidebar 'guide'"
   },
   "sidebar.guide.category.Reference": {
-    "message": "Reference",
+    "message": "Référence",
     "description": "The label for category 'Reference' in sidebar 'guide'"
   },
   "sidebar.guide.category.Pricing": {
-    "message": "Pricing",
+    "message": "Tarifs",
     "description": "The label for category 'Pricing' in sidebar 'guide'"
   },
   "sidebar.guide.category.Support": {
-    "message": "Support",
+    "message": "Assistance",
     "description": "The label for category 'Support' in sidebar 'guide'"
   },
   "sidebar.guide.category.Press": {
-    "message": "Press",
+    "message": "Presse",
     "description": "The label for category 'Press' in sidebar 'guide'"
   },
   "sidebar.guide.category.Policies": {
-    "message": "Policies",
+    "message": "Politiques",
     "description": "The label for category 'Policies' in sidebar 'guide'"
   }
 }

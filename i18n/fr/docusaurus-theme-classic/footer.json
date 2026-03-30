@@ -48,7 +48,7 @@
     "description": "The label of footer link with label=Press kit linking to /press"
   },
   "copyright": {
-    "message": "Copyright © 2026 MYTHOLOGI Inc.",
+    "message": "Copyright © {currentYear} MYTHOLOGI Inc.",
     "description": "The footer copyright"
   }
 }

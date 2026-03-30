@@ -1,0 +1,75 @@
+---
+hide_table_of_contents: true
+---
+import { PricingCard, PricingGrid } from '@site/src/components/Pricing';
+
+# Tarifs
+
+__Toutes les fonctionnalités et l'espace dont vous avez besoin pour commencer à créer et publier.__
+
+<PricingGrid>
+  <PricingCard
+    title='Personnel'
+    description="Nous nous engageons à maintenir un plan personnel généreux qui restera gratuit pour toujours."
+    price='Gratuit'
+    pricePeriod='pour toujours !'
+    items={[
+      {
+        description: 'Un monde privé',
+        included: true
+      },
+      {
+        description: 'Scènes privées illimitées',
+        included: true
+      },
+      {
+        description: '3 scènes publiques',
+        included: true
+      },
+      {
+        description: '10 Go de stockage de ressources',
+        included: true
+      },
+      {
+        description: 'Bande passante illimitée',
+        included: true
+      },
+      {
+        description: "Publiez jusqu'à 30 ressources sur notre CDN mondial",
+        included: true
+      },
+    ]}
+  />
+  <PricingCard
+    title='Professionnel et Entreprise'
+    description="Nous travaillons encore sur les tarifs et les fonctionnalités pour les utilisateurs professionnels et entreprises."
+    price='À déterminer'
+    pricePeriod=''
+    items={[
+      {
+        description: 'Publiez plus de mondes et de scènes',
+        included: true
+      },
+      {
+        description: 'Téléversez et publiez plus de ressources',
+        included: true
+      },
+      {
+        description: 'Collaborez avec des membres de votre équipe',
+        included: true
+      },
+      {
+        description: 'Analytiques et rapports avancés',
+        included: true
+      },
+      {
+        description: '...',
+        included: true
+      },
+      {
+        description: 'Partagez vos idées sur [Discord](https://discord.gg/gYMKNYHJRJ) !',
+        included: true
+      },
+    ]}
+  />
+</PricingGrid>
