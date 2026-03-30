@@ -1,0 +1,17 @@
+{
+  "name": "doc-organizer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Drag-and-drop docs organizer for Docusaurus",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.0",
+    "express": "^4.21.0",
+    "glob": "^11.0.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^15.0.0"
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doc Organizer — ELYSIUM</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-left">
+      <h1>Doc Organizer</h1>
+      <span class="badge">ELYSIUM</span>
+    </div>
+    <div class="header-right">
+      <span class="status" id="status">Connecting...</span>
+    </div>
+  </header>
+
+  <main id="tree-container"></main>
+
+  <!-- Preview Modal -->
+  <div class="modal-overlay" id="preview-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="modal-title"></h2>
+          <span class="modal-subtitle" id="modal-subtitle"></span>
+        </div>
+        <button class="modal-close" id="modal-close">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="modal-prev">&#8592; Back</button>
+        <div class="step-dots" id="modal-dots"></div>
+        <button class="btn btn-primary" id="modal-next">Next &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Page Modal -->
+  <div class="modal-overlay" id="create-modal">
+    <div class="modal-card modal-card-sm">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="create-title">New Page</h2>
+          <span class="modal-subtitle" id="create-subtitle"></span>
+        </div>
+        <button class="modal-close" id="create-close">&times;</button>
+      </div>
+      <div class="modal-body" id="create-body"></div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="create-prev">&#8592; Back</button>
+        <div class="step-dots" id="create-dots"></div>
+        <button class="btn btn-primary" id="create-next">Next &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
