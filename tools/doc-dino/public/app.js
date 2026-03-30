@@ -489,7 +489,7 @@ async function toggleDraft(page) {
 
 async function deletePage(page) {
   if (!confirm(`Delete "${page.title}"?\n\nFile: ${page.path}\n\nThis cannot be undone.`)) return;
-  await fetch(`/api/page/${encodeURIComponent(page.path)}`, { method: 'DELETE' });
+  await fetch(`/api/page/${page.path.split('/').map(encodeURIComponent).join('/')}`, { method: 'DELETE' });
   loadTree();
 }
 
@@ -783,7 +783,7 @@ modalEditBtn.addEventListener('click', toggleEditMode);
 modalDeleteBtn.addEventListener('click', async () => {
   const page = previewPages[previewIndex];
   if (!confirm(`Delete "${page.title}"?\n\nFile: ${page.path}\n\nThis cannot be undone.`)) return;
-  await fetch(`/api/page/${encodeURIComponent(page.path)}`, { method: 'DELETE' });
+  await fetch(`/api/page/${page.path.split('/').map(encodeURIComponent).join('/')}`, { method: 'DELETE' });
   closePreviewModal();
   loadTree();
 });
