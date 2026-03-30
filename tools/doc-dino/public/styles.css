@@ -30,8 +30,9 @@ body::before {
   inset: 0;
   background: url('bubble-bobble-wallpaper-2880x1800_8.jpg') center / cover no-repeat;
   filter: blur(12px) saturate(0.25) brightness(0.5);
-  transform: scale(1.05); /* prevents blur edge bleed */
+  transform: scale(1.12) translateY(var(--parallax-y, 0px));
   z-index: -1;
+  will-change: transform;
 }
 
 /* ─── Header ─── */

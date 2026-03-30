@@ -929,5 +929,10 @@ document.addEventListener('drop', (e) => {
   clearDropIndicator();
 });
 
+// ─── Parallax ───
+window.addEventListener('scroll', () => {
+  document.documentElement.style.setProperty('--parallax-y', `${window.scrollY * -0.25}px`);
+}, { passive: true });
+
 // ─── Init ───
 loadTree();
