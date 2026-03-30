@@ -157,20 +157,18 @@ function renderCategory(cat, isSub) {
   eyeBtn.addEventListener('click', (e) => e.stopPropagation());
   catControls.appendChild(eyeBtn);
 
-  header.appendChild(catControls);
+  // Add page button (inside controls for alignment with page rows)
+  const addBtn = document.createElement('button');
+  addBtn.className = 'cat-add-btn';
+  addBtn.textContent = '+';
+  addBtn.title = t('addPage');
+  addBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openCreateModal(cat);
+  });
+  catControls.appendChild(addBtn);
 
-  // Add page button
-  if (!isSub || cat.pages.length > 0 || true) {
-    const addBtn = document.createElement('button');
-    addBtn.className = 'cat-add-btn';
-    addBtn.textContent = '+';
-    addBtn.title = t('addPage');
-    addBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      openCreateModal(cat);
-    });
-    header.appendChild(addBtn);
-  }
+  header.appendChild(catControls);
 
   header.addEventListener('click', () => {
     collapsed = !collapsed;
