@@ -107,7 +107,7 @@ body::before {
 .sidebar-toggle:hover { color: var(--text); }
 /* Floating toggle when sidebar collapsed */
 .sidebar-toggle-float {
-  position: fixed; top: 74px; left: 8px; z-index: 60;
+  position: fixed; top: 84px; left: 8px; z-index: 60;
   background: var(--surface); border: 1px solid var(--border);
   color: var(--text-muted); cursor: pointer; padding: 6px;
   border-radius: 6px; display: none;
