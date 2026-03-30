@@ -24,7 +24,20 @@
     </div>
   </header>
 
-  <main id="tree-container"></main>
+  <div class="app-layout">
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <button class="sidebar-toggle" id="sidebar-toggle" title="Toggle sidebar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
+        </button>
+      </div>
+      <div class="sidebar-tree" id="sidebar-tree"></div>
+    </nav>
+    <button class="sidebar-toggle-float" id="sidebar-toggle-float" title="Show sidebar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
+    </button>
+    <main id="tree-container"></main>
+  </div>
 
   <!-- Preview Modal -->
   <div class="modal-overlay" id="preview-modal">

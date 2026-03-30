@@ -92,12 +92,90 @@ function renderTree() {
       container.appendChild(renderCategory(cat, false));
     }
   }
+  renderSidebar();
+}
+
+// ─── Sidebar ───
+const sidebar = document.getElementById('sidebar');
+const sidebarTree = document.getElementById('sidebar-tree');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebarToggleFloat = document.getElementById('sidebar-toggle-float');
+
+sidebarToggle.addEventListener('click', () => sidebar.classList.add('collapsed'));
+sidebarToggleFloat.addEventListener('click', () => sidebar.classList.remove('collapsed'));
+
+function renderSidebar() {
+  sidebarTree.innerHTML = '';
+  if (!treeData?.categories?.length) return;
+  for (const cat of treeData.categories) {
+    sidebarTree.appendChild(renderSidebarCategory(cat, false));
+  }
+}
+
+function renderSidebarCategory(cat, isSub) {
+  const el = document.createElement('div');
+  el.className = 'sb-category';
+
+  const header = document.createElement('div');
+  header.className = isSub ? 'sb-subcat-header' : 'sb-cat-header';
+
+  const chevron = document.createElement('span');
+  chevron.className = 'sb-chevron';
+  chevron.textContent = '▶';
+  header.appendChild(chevron);
+
+  const label = document.createElement('span');
+  label.className = 'sb-cat-label';
+  label.textContent = cat.label;
+  header.appendChild(label);
+
+  el.appendChild(header);
+
+  const pagesList = document.createElement('ul');
+  pagesList.className = 'sb-pages collapsed';
+
+  for (const page of cat.pages) {
+    const li = document.createElement('li');
+    li.className = 'sb-page' + (page.draft ? ' is-draft' : '');
+    li.textContent = page.title;
+    li.addEventListener('click', (e) => {
+      e.stopPropagation();
+      scrollToElement('page-' + page.path.replace(/[^a-z0-9-]/gi, '-'));
+    });
+    pagesList.appendChild(li);
+  }
+
+  for (const sub of cat.subcategories || []) {
+    pagesList.appendChild(renderSidebarCategory(sub, true));
+  }
+
+  el.appendChild(pagesList);
+
+  header.addEventListener('click', () => {
+    const isCollapsed = pagesList.classList.contains('collapsed');
+    pagesList.classList.toggle('collapsed');
+    chevron.className = isCollapsed ? 'sb-chevron open' : 'sb-chevron';
+    // Also scroll to this category in main tree
+    scrollToElement('cat-' + cat.path.replace(/[^a-z0-9-]/gi, '-'));
+  });
+
+  return el;
+}
+
+function scrollToElement(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Brief highlight
+  el.classList.add('scroll-highlight');
+  setTimeout(() => el.classList.remove('scroll-highlight'), 1200);
 }
 
 function renderCategory(cat, isSub) {
   const el = document.createElement('div');
   el.className = isSub ? 'category subcategory' : 'category';
   el.dataset.catPath = cat.path;
+  el.id = 'cat-' + cat.path.replace(/[^a-z0-9-]/gi, '-');
   if (!isSub) {
     el.draggable = true;
     el.addEventListener('dragstart', (e) => onCatDragStart(e, cat));
@@ -240,6 +318,7 @@ function renderPageItem(page, cat) {
   li.draggable = true;
   li.dataset.pagePath = page.path;
   li.dataset.catPath = cat.path;
+  li.id = 'page-' + page.path.replace(/[^a-z0-9-]/gi, '-');
 
   li.addEventListener('dragstart', (e) => {
     e.stopPropagation();
