@@ -101,8 +101,9 @@ const sidebarTree = document.getElementById('sidebar-tree');
 const sidebarToggle = document.getElementById('sidebar-toggle');
 const sidebarToggleFloat = document.getElementById('sidebar-toggle-float');
 
-sidebarToggle.addEventListener('click', () => sidebar.classList.add('collapsed'));
-sidebarToggleFloat.addEventListener('click', () => sidebar.classList.remove('collapsed'));
+const appLayout = document.querySelector('.app-layout');
+sidebarToggle.addEventListener('click', () => { sidebar.classList.add('collapsed'); appLayout.classList.add('sidebar-closed'); });
+sidebarToggleFloat.addEventListener('click', () => { sidebar.classList.remove('collapsed'); appLayout.classList.remove('sidebar-closed'); });
 
 function renderSidebar() {
   sidebarTree.innerHTML = '';

@@ -77,18 +77,17 @@ body::before {
 
 /* ─── Sidebar ─── */
 .sidebar {
-  width: 240px; min-width: 240px;
+  width: 240px;
   background: rgba(8,8,18,0.75);
   border-right: 1px solid var(--border);
   backdrop-filter: blur(var(--blur));
-  position: sticky; top: 65px;
-  height: calc(100vh - 65px);
+  position: fixed; top: 65px; left: 0; bottom: 0;
   overflow-y: auto;
-  transition: width 0.2s, min-width 0.2s, padding 0.2s;
+  transition: width 0.2s, padding 0.2s;
   z-index: 50;
 }
 .sidebar.collapsed {
-  width: 0; min-width: 0;
+  width: 0;
   border-right: none;
   overflow: hidden;
 }
@@ -169,7 +168,8 @@ body::before {
 .scroll-highlight { animation: highlight-fade 1.2s ease-out; }
 
 /* ─── Tree ─── */
-#tree-container { padding: 16px 24px; flex: 1; max-width: 900px; margin: 0 auto; }
+#tree-container { padding: 16px 24px; flex: 1; max-width: 900px; margin-left: 240px; margin-right: auto; transition: margin-left 0.2s; }
+.app-layout.sidebar-closed #tree-container { margin-left: auto; }
 
 .category {
   margin-bottom: 8px;
