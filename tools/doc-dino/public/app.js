@@ -165,7 +165,9 @@ function renderSidebarCategory(cat, isSub) {
 function scrollToElement(id) {
   const el = document.getElementById(id);
   if (!el) return;
-  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const rect = el.getBoundingClientRect();
+  const offset = rect.top + window.scrollY - window.innerHeight * 0.35;
+  window.scrollTo({ top: Math.max(0, offset), behavior: 'smooth' });
   // Brief highlight
   el.classList.add('scroll-highlight');
   setTimeout(() => el.classList.remove('scroll-highlight'), 1200);
