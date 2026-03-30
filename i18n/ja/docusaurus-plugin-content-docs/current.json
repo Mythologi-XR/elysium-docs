@@ -1,0 +1,46 @@
+{
+  "version.label": {
+    "message": "次期",
+    "description": "The label for version current"
+  },
+  "sidebar.guide.category.Introduction": {
+    "message": "はじめに",
+    "description": "The label for category 'Introduction' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Getting Started": {
+    "message": "スタートガイド",
+    "description": "The label for category 'Getting Started' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.ALPHA Lab": {
+    "message": "ALPHA Lab",
+    "description": "The label for category 'ALPHA Lab' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Card Designer": {
+    "message": "Card Designer",
+    "description": "The label for category 'Card Designer' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Card Designer.link.generated-index.description": {
+    "message": "ELYSIUM Card Designer を使って、魅力的な AR カードやロイヤルティカードをデザインする方法を学びましょう。",
+    "description": "The generated-index page description for category 'Card Designer' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Reference": {
+    "message": "リファレンス",
+    "description": "The label for category 'Reference' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Pricing": {
+    "message": "料金",
+    "description": "The label for category 'Pricing' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Support": {
+    "message": "サポート",
+    "description": "The label for category 'Support' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Press": {
+    "message": "プレス",
+    "description": "The label for category 'Press' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Policies": {
+    "message": "ポリシー",
+    "description": "The label for category 'Policies' in sidebar 'guide'"
+  }
+}

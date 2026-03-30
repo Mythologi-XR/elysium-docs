@@ -1,0 +1,75 @@
+---
+hide_table_of_contents: true
+---
+import { PricingCard, PricingGrid } from '@site/src/components/Pricing';
+
+# 料金
+
+__構築と公開を始めるために必要なすべての機能とストレージ。__
+
+<PricingGrid>
+  <PricingCard
+    title='パーソナル'
+    description="私たちは、永久に無料であり続ける充実したパーソナルプランの維持に取り組んでいます。"
+    price='無料'
+    pricePeriod='ずっと無料！'
+    items={[
+      {
+        description: 'プライベートワールド 1 つ',
+        included: true
+      },
+      {
+        description: 'プライベートシーン無制限',
+        included: true
+      },
+      {
+        description: 'パブリックシーン 3 つ',
+        included: true
+      },
+      {
+        description: 'アセットストレージ 10 GB',
+        included: true
+      },
+      {
+        description: '無制限の帯域幅',
+        included: true
+      },
+      {
+        description: 'グローバル CDN に最大 30 アセットを公開',
+        included: true
+      },
+    ]}
+  />
+  <PricingCard
+    title='プロフェッショナル＆エンタープライズ'
+    description="プロフェッショナルおよびエンタープライズユーザー向けの料金と機能についてはまだ検討中です。"
+    price='TBD'
+    pricePeriod=''
+    items={[
+      {
+        description: 'より多くのワールドとシーンを公開',
+        included: true
+      },
+      {
+        description: 'より多くのアセットをアップロード・公開',
+        included: true
+      },
+      {
+        description: 'チームメンバーとのコラボレーション',
+        included: true
+      },
+      {
+        description: '高度な分析とレポート',
+        included: true
+      },
+      {
+        description: '...',
+        included: true
+      },
+      {
+        description: '[Discord](https://discord.gg/gYMKNYHJRJ) でアイデアをお聞かせください！',
+        included: true
+      },
+    ]}
+  />
+</PricingGrid>

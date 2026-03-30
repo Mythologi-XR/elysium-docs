@@ -1,0 +1,50 @@
+{
+  "logo.alt": {
+    "message": "Elysium ロゴ",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Docs": {
+    "message": "ドキュメント",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Pricing": {
+    "message": "料金",
+    "description": "Navbar item with label Pricing"
+  },
+  "item.label.Support": {
+    "message": "サポート",
+    "description": "Navbar item with label Support"
+  },
+  "item.label.Discord": {
+    "message": "Discord",
+    "description": "Navbar item with label Discord"
+  },
+  "item.label.Download Elysium on the App Store": {
+    "message": "App Store で ELYSIUM をダウンロード",
+    "description": "Navbar item with label Download Elysium on the App Store"
+  },
+  "item.label.Introduction": {
+    "message": "はじめに",
+    "description": "Navbar item with label Introduction"
+  },
+  "item.label.Getting Started": {
+    "message": "スタートガイド",
+    "description": "Navbar item with label Getting Started"
+  },
+  "item.label.Card Designer": {
+    "message": "Card Designer",
+    "description": "Navbar item with label Card Designer"
+  },
+  "item.label.Reference": {
+    "message": "リファレンス",
+    "description": "Navbar item with label Reference"
+  },
+  "item.label.Contact us": {
+    "message": "お問い合わせ",
+    "description": "Navbar item with label Contact us"
+  },
+  "item.label.FAQ": {
+    "message": "よくある質問",
+    "description": "Navbar item with label FAQ"
+  }
+}

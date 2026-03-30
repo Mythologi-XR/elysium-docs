@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: ELYSIUM Creation App
 description: In situ AR creation and account management
 draft: true
