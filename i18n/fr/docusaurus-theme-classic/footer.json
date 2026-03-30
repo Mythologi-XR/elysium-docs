@@ -1,0 +1,54 @@
+{
+  "link.title.Product": {
+    "message": "Produit",
+    "description": "The title of the footer links column with title=Product in the footer"
+  },
+  "link.title.Community": {
+    "message": "Communauté",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "Plus",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Pricing": {
+    "message": "Tarifs",
+    "description": "The label of footer link with label=Pricing linking to /pricing"
+  },
+  "link.item.label.Docs": {
+    "message": "Documentation",
+    "description": "The label of footer link with label=Docs linking to /introduction"
+  },
+  "link.item.label.Support": {
+    "message": "Assistance",
+    "description": "The label of footer link with label=Support linking to /support"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/gYMKNYHJRJ"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/elysiumXR"
+  },
+  "link.item.label.Instagram": {
+    "message": "Instagram",
+    "description": "The label of footer link with label=Instagram linking to https://www.instagram.com/mythologi.es/"
+  },
+  "link.item.label.YouTube": {
+    "message": "YouTube",
+    "description": "The label of footer link with label=YouTube linking to https://www.youtube.com/channel/UCDC0xji3cOyUDBVSryyHh3Q"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "Politique de confidentialité",
+    "description": "The label of footer link with label=Privacy Policy linking to /policies/privacy"
+  },
+  "link.item.label.Press kit": {
+    "message": "Dossier de presse",
+    "description": "The label of footer link with label=Press kit linking to /press"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 MYTHOLOGI Inc.",
+    "description": "The footer copyright"
+  }
+}

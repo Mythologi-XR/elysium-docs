@@ -1,0 +1,50 @@
+{
+  "logo.alt": {
+    "message": "Logo Elysium",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Docs": {
+    "message": "Documentation",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Pricing": {
+    "message": "Tarifs",
+    "description": "Navbar item with label Pricing"
+  },
+  "item.label.Support": {
+    "message": "Assistance",
+    "description": "Navbar item with label Support"
+  },
+  "item.label.Discord": {
+    "message": "Discord",
+    "description": "Navbar item with label Discord"
+  },
+  "item.label.Download Elysium on the App Store": {
+    "message": "Télécharger Elysium sur l'App Store",
+    "description": "Navbar item with label Download Elysium on the App Store"
+  },
+  "item.label.Introduction": {
+    "message": "Introduction",
+    "description": "Navbar item with label Introduction"
+  },
+  "item.label.Getting Started": {
+    "message": "Premiers pas",
+    "description": "Navbar item with label Getting Started"
+  },
+  "item.label.Card Designer": {
+    "message": "Concepteur de cartes",
+    "description": "Navbar item with label Card Designer"
+  },
+  "item.label.Reference": {
+    "message": "Référence",
+    "description": "Navbar item with label Reference"
+  },
+  "item.label.Contact us": {
+    "message": "Contactez-nous",
+    "description": "Navbar item with label Contact us"
+  },
+  "item.label.FAQ": {
+    "message": "FAQ",
+    "description": "Navbar item with label FAQ"
+  }
+}

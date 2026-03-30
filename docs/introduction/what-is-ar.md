@@ -14,3 +14,5 @@ You are likely exposed to AR everyday without knowing it. One form of AR powers 
 Just as AR has many forms, it has an even larger breadth of uses.
 
 Depending on the kind of AR being implemented, the specific combinations of individual technologies in place, and the delivery of those technologies as an experience, AR has the capacity to add to anything we do that involves people and connectivity.
+
+Plus: AR is FUN!

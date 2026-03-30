@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doc Dino — ELYSIUM</title>
+  <link rel="icon" type="image/png" href="/Bubble-dino.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-left">
+      <img src="/Bubble-dino.png" alt="Doc Dino" class="header-logo">
+      <h1>Doc Dino</h1>
+      <span class="header-at">@</span>
+      <img src="/elysium-logo_watermark.svg" alt="ELYSIUM" class="header-elysium-logo">
+    </div>
+    <div class="header-right">
+      <span class="status" id="status">CONNECTING...</span>
+      <button class="lang-switcher" id="lang-switcher" title="English">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <span id="lang-code">EN</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="tree-container"></main>
+
+  <!-- Preview Modal -->
+  <div class="modal-overlay" id="preview-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="modal-title"></h2>
+          <span class="modal-subtitle" id="modal-subtitle"></span>
+        </div>
+        <div class="modal-header-actions">
+          <button class="eye-toggle" id="modal-eye-toggle" title="Toggle visibility"></button>
+          <button class="pub-icon-btn modal-draft-badge" id="modal-draft-badge"></button>
+          <button class="modal-edit-btn" id="modal-edit" title="Edit content">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+          </button>
+          <button class="modal-close" id="modal-close">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="modal-prev">&#8592; Back</button>
+        <div class="step-dots" id="modal-dots"></div>
+        <button class="btn btn-primary" id="modal-next">Next &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Page Modal -->
+  <div class="modal-overlay" id="create-modal">
+    <div class="modal-card modal-card-sm">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="create-title">New Page</h2>
+          <span class="modal-subtitle" id="create-subtitle"></span>
+        </div>
+        <button class="modal-close" id="create-close">&times;</button>
+      </div>
+      <div class="modal-body" id="create-body"></div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="create-prev">&#8592; Back</button>
+        <div class="step-dots" id="create-dots"></div>
+        <button class="btn btn-primary" id="create-next">Next &#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/i18n.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.guide.category.Introduction": {
+    "message": "Introduction",
+    "description": "The label for category 'Introduction' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for category 'Getting Started' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.ALPHA Lab": {
+    "message": "ALPHA Lab",
+    "description": "The label for category 'ALPHA Lab' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Card Designer": {
+    "message": "Card Designer",
+    "description": "The label for category 'Card Designer' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Card Designer.link.generated-index.description": {
+    "message": "Learn how to design stunning AR and Loyalty cards with the ELYSIUM Card Designer.",
+    "description": "The generated-index page description for category 'Card Designer' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Reference": {
+    "message": "Reference",
+    "description": "The label for category 'Reference' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Pricing": {
+    "message": "Pricing",
+    "description": "The label for category 'Pricing' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Support": {
+    "message": "Support",
+    "description": "The label for category 'Support' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Press": {
+    "message": "Press",
+    "description": "The label for category 'Press' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Policies": {
+    "message": "Policies",
+    "description": "The label for category 'Policies' in sidebar 'guide'"
+  }
+}

@@ -15,6 +15,8 @@
 
 /** @type {Record<string, boolean>} */
 const pillars = {
+  'introduction':     true,
+  'getting-started':  true,
   'elysium-play':     false,
   'creation-app':     false,
   'portal':           false,
@@ -26,6 +28,11 @@ const pillars = {
   'reality-bridge':   false,
   'alpha-lab':        true,
   'reference':        true,
+  'pricing':          true,
+  'support':          true,
+  'press':            true,
+  'policies':         true,
+  'publishing':       true,
 };
 
 /**

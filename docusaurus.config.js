@@ -44,7 +44,21 @@ module.exports = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ar', 'de', 'es', 'fa', 'fr', 'ja', 'ko', 'pt', 'pt-BR', 'ru', 'zh'],
+    localeConfigs: {
+      en: { label: 'English', htmlLang: 'en' },
+      ar: { label: 'العربية', direction: 'rtl', htmlLang: 'ar' },
+      de: { label: 'Deutsch', htmlLang: 'de' },
+      es: { label: 'Español', htmlLang: 'es' },
+      fa: { label: 'فارسی', direction: 'rtl', htmlLang: 'fa' },
+      fr: { label: 'Français', htmlLang: 'fr' },
+      ja: { label: '日本語', htmlLang: 'ja' },
+      ko: { label: '한국어', htmlLang: 'ko' },
+      pt: { label: 'Português', htmlLang: 'pt' },
+      'pt-BR': { label: 'Português (BR)', htmlLang: 'pt-BR' },
+      ru: { label: 'Русский', htmlLang: 'ru' },
+      zh: { label: '中文', htmlLang: 'zh' },
+    },
   },
 
   presets: [
@@ -120,6 +134,10 @@ module.exports = {
                 label: 'FAQ'
               },
             ]
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
           },
           {
             label: 'Discord',
