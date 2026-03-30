@@ -9,6 +9,7 @@ const { marked } = require('marked');
 const app = express();
 const PORT = 3333;
 const DOCS_DIR = path.resolve(__dirname, '../../docs');
+const I18N_DIR = path.resolve(__dirname, '../../i18n');
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -155,14 +156,45 @@ app.get('/api/tree', async (req, res) => {
   }
 });
 
+app.get('/api/locale-status', (req, res) => {
+  const locale = req.query.locale;
+  if (!locale || locale === 'en') return res.json({ translated: [] });
+  const localeDir = path.join(I18N_DIR, locale, 'docusaurus-plugin-content-docs/current');
+  if (!fs.existsSync(localeDir)) return res.json({ translated: [] });
+  const results = [];
+  function scan(dir, rel) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const relPath = rel ? `${rel}/${entry.name}` : entry.name;
+      if (entry.isDirectory()) {
+        scan(path.join(dir, entry.name), relPath);
+      } else if (entry.name.endsWith('.md') || entry.name.endsWith('.mdx')) {
+        results.push(relPath);
+      }
+    }
+  }
+  scan(localeDir, '');
+  res.json({ translated: results });
+});
+
 app.get('/api/page/:path(*)/content', (req, res) => {
   try {
-    const filePath = path.join(DOCS_DIR, req.params.path);
+    const locale = req.query.locale;
+    let filePath = path.join(DOCS_DIR, req.params.path);
+    let isTranslated = false;
+
+    if (locale && locale !== 'en') {
+      const localePath = path.join(I18N_DIR, locale, 'docusaurus-plugin-content-docs/current', req.params.path);
+      if (fs.existsSync(localePath)) {
+        filePath = localePath;
+        isTranslated = true;
+      }
+    }
+
     if (!fs.existsSync(filePath)) return res.status(404).json({ error: 'Not found' });
     const raw = fs.readFileSync(filePath, 'utf-8');
     const { data, content } = matter(raw);
     const html = marked(content);
-    res.json({ frontmatter: data, html, raw: content });
+    res.json({ frontmatter: data, html, raw: content, isTranslated });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

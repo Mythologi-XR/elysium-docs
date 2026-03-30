@@ -193,6 +193,18 @@ body {
 .pub-icon-btn.is-draft { color: #ffa726; }
 .pub-icon-btn.is-draft:hover { background: rgba(255,152,0,0.15); }
 
+/* ─── Translation badges ─── */
+.trans-badge {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.6px;
+  padding: 2px 5px; border-radius: 3px; flex-shrink: 0;
+  pointer-events: none;
+}
+.trans-badge.translated { background: rgba(100,181,246,0.18); color: #64b5f6; }
+.trans-badge.partial { background: rgba(255,183,77,0.18); color: #ffb74d; }
+.trans-badge.fallback { background: rgba(255,255,255,0.06); color: var(--text-muted); }
+.cat-trans-badge { margin-left: 4px; }
+.modal-subtitle.fallback-notice { color: #ffb74d; }
+
 /* ─── Subcategory ─── */
 .subcategory { margin-left: 16px; border-left: 2px solid var(--border); }
 .subcategory .category-header { padding-left: 12px; }

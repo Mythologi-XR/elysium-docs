@@ -1,5 +1,6 @@
 // ─── State ───
 let treeData = null;
+let localeStatus = new Set(); // relative paths that have translations for the active locale
 let draggedItem = null;
 let draggedType = null; // 'page' or 'category'
 let draggedCat = null; // category the dragged page belongs to
@@ -33,13 +34,13 @@ function updateLangSwitcher() {
   langSwitcher.title = loc.label;
 }
 
-langSwitcher.addEventListener('click', () => {
+langSwitcher.addEventListener('click', async () => {
   const available = SUPPORTED_LOCALES.filter(l => TRANSLATIONS[l.code]);
   const idx = available.findIndex(l => l.code === getLocale());
   const next = available[(idx + 1) % available.length];
   setLocale(next.code);
   updateLangSwitcher();
-  // Re-render everything with new locale
+  await fetchLocaleStatus();
   renderTree();
   // Update status text
   if (statusEl.classList.contains('connected')) {
@@ -51,10 +52,22 @@ langSwitcher.addEventListener('click', () => {
 
 updateLangSwitcher();
 
+// ─── Locale Status ───
+async function fetchLocaleStatus() {
+  const locale = getLocale();
+  if (locale === 'en') { localeStatus = new Set(); return; }
+  const res = await fetch(`/api/locale-status?locale=${locale}`);
+  const data = await res.json();
+  localeStatus = new Set(data.translated || []);
+}
+
 // ─── Tree Loading ───
 async function loadTree() {
-  const res = await fetch('/api/tree');
-  treeData = await res.json();
+  const [treeRes] = await Promise.all([
+    fetch('/api/tree'),
+    fetchLocaleStatus(),
+  ]);
+  treeData = await treeRes.json();
   renderTree();
 }
 
@@ -105,6 +118,22 @@ function renderCategory(cat, isSub) {
     startCatLabelEdit(label, cat);
   });
   header.appendChild(label);
+
+  // Translation coverage badge (non-EN only)
+  if (getLocale() !== 'en') {
+    const allPages = [...(cat.pages || []), ...(cat.subcategories || []).flatMap(s => s.pages || [])];
+    const translatedCount = allPages.filter(p => localeStatus.has(p.path)).length;
+    const total = allPages.length;
+    if (total > 0) {
+      const transBadge = document.createElement('span');
+      const locale = getLocale().toUpperCase();
+      const allTranslated = translatedCount === total;
+      transBadge.className = 'trans-badge cat-trans-badge' + (allTranslated ? ' translated' : translatedCount > 0 ? ' partial' : ' fallback');
+      transBadge.textContent = allTranslated ? locale : `${locale} ${translatedCount}/${total}`;
+      transBadge.title = `${translatedCount} of ${total} pages translated`;
+      header.appendChild(transBadge);
+    }
+  }
 
   // Right-aligned controls group
   const catControls = document.createElement('div');
@@ -234,6 +263,17 @@ function renderPageItem(page, cat) {
     startPageTitleEdit(title, page);
   });
   li.appendChild(title);
+
+  // Translation flag badge (non-EN only)
+  if (getLocale() !== 'en') {
+    const isTranslated = localeStatus.has(page.path);
+    const flagBadge = document.createElement('span');
+    const locale = getLocale().toUpperCase();
+    flagBadge.className = 'trans-badge' + (isTranslated ? ' translated' : ' fallback');
+    flagBadge.textContent = isTranslated ? locale : 'EN';
+    flagBadge.title = isTranslated ? `Translated (${locale})` : 'EN fallback — no translation yet';
+    li.appendChild(flagBadge);
+  }
 
   // Right-aligned controls: [filename][pub button][eye]
   const pageControls = document.createElement('div');
@@ -533,12 +573,17 @@ async function openPreviewModal(page, cat) {
 async function showPreviewPage() {
   const page = previewPages[previewIndex];
   modalTitle.textContent = page.title;
-  modalSubtitle.textContent = page.path;
   modalBody.innerHTML = `<div style="text-align:center;color:var(--text-muted);padding:40px">${t('loading')}</div>`;
 
-  const res = await fetch(`/api/page/${encodeURIComponent(page.path)}/content`);
+  const locale = getLocale();
+  const res = await fetch(`/api/page/${encodeURIComponent(page.path)}/content?locale=${locale}`);
   const data = await res.json();
   editorRawContent = data.raw || '';
+
+  // Show path + translation status in subtitle
+  const localeName = locale !== 'en' ? ` · ${locale.toUpperCase()} ${data.isTranslated ? '✓' : '(EN fallback)'}` : '';
+  modalSubtitle.textContent = page.path + localeName;
+  modalSubtitle.className = 'modal-subtitle' + (locale !== 'en' && !data.isTranslated ? ' fallback-notice' : '');
 
   if (isEditing) {
     renderEditor();
