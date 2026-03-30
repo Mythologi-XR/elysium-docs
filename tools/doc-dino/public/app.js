@@ -273,14 +273,15 @@ function renderPageItem(page, cat) {
     li.appendChild(flagBadge);
   }
 
-  // Right-aligned controls: [filename][pub button][eye]
-  const pageControls = document.createElement('div');
-  pageControls.className = 'item-controls';
-
+  // Filename label (before controls group)
   const filePath = document.createElement('span');
   filePath.className = 'page-path';
   filePath.textContent = page.path.split('/').pop();
-  pageControls.appendChild(filePath);
+  li.appendChild(filePath);
+
+  // Right-aligned controls: [pub button][eye][delete]
+  const pageControls = document.createElement('div');
+  pageControls.className = 'item-controls';
 
   const toggle = document.createElement('button');
   toggle.className = 'pub-icon-btn' + (page.draft ? ' is-draft' : ' is-published');
