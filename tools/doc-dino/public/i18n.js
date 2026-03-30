@@ -42,6 +42,13 @@ const TRANSLATIONS = {
     enterProjectName: 'My New Page',
     enterFilename: 'my-new-page',
     deletePage: 'Delete page',
+    newCategory: 'New Category',
+    categoryLabel: 'Category Label',
+    categoryLabelPlaceholder: 'My New Section',
+    folderName: 'Folder Name',
+    folderNamePlaceholder: 'my-new-section',
+    folderNameHint: 'Used as the directory name in docs/',
+    categoryLabelRequired: 'Category label is required',
   },
   fr: {
     connecting: 'CONNEXION...',
@@ -84,6 +91,13 @@ const TRANSLATIONS = {
     enterProjectName: 'Ma nouvelle page',
     enterFilename: 'ma-nouvelle-page',
     deletePage: 'Supprimer la page',
+    newCategory: 'Nouvelle cat\u00e9gorie',
+    categoryLabel: '\u00c9tiquette de cat\u00e9gorie',
+    categoryLabelPlaceholder: 'Ma nouvelle section',
+    folderName: 'Nom du dossier',
+    folderNamePlaceholder: 'ma-nouvelle-section',
+    folderNameHint: 'Utilis\u00e9 comme nom du r\u00e9pertoire dans docs/',
+    categoryLabelRequired: 'L\u2019\u00e9tiquette de cat\u00e9gorie est requise',
   },
 };
 

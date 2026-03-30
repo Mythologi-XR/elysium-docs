@@ -378,6 +378,21 @@ app.delete('/api/page/:path(*)', (req, res) => {
   }
 });
 
+app.post('/api/category/create', (req, res) => {
+  try {
+    const { name, label, position } = req.body;
+    const safeName = name.replace(/[^a-z0-9-]/gi, '-').toLowerCase();
+    const dirPath = path.join(DOCS_DIR, safeName);
+    if (fs.existsSync(dirPath)) return res.status(409).json({ error: 'Category already exists' });
+    fs.mkdirSync(dirPath, { recursive: true });
+    const catMeta = { label: label || safeName, position: position ?? 999 };
+    fs.writeFileSync(path.join(dirPath, '_category_.json'), JSON.stringify(catMeta, null, 2) + '\n');
+    res.json({ ok: true, path: safeName });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.post('/api/page/create', (req, res) => {
   try {
     const { category, filename, title, draft, position, content } = req.body;

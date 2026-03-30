@@ -76,11 +76,18 @@ function renderTree() {
   container.innerHTML = '';
   if (!treeData?.categories?.length) {
     container.innerHTML = `<div class="empty-state">${t('noDocs')}</div>`;
-    return;
+  } else {
+    for (const cat of treeData.categories) {
+      container.appendChild(renderCategory(cat, false));
+    }
   }
-  for (const cat of treeData.categories) {
-    container.appendChild(renderCategory(cat, false));
-  }
+
+  // "New Category" button at bottom of tree
+  const newCatBtn = document.createElement('button');
+  newCatBtn.className = 'new-cat-btn';
+  newCatBtn.innerHTML = '+ ' + t('newCategory');
+  newCatBtn.addEventListener('click', () => openCreateCategoryModal());
+  container.appendChild(newCatBtn);
 }
 
 function renderCategory(cat, isSub) {
@@ -90,9 +97,35 @@ function renderCategory(cat, isSub) {
   if (!isSub) {
     el.draggable = true;
     el.addEventListener('dragstart', (e) => onCatDragStart(e, cat));
-    el.addEventListener('dragend', onCatDragEnd);
-    el.addEventListener('dragover', (e) => onCatDragOver(e, el));
-    el.addEventListener('drop', (e) => onCatDrop(e, cat));
+    el.addEventListener('dragend', onDragEnd);
+    el.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (draggedType === 'category' && draggedItem.path !== cat.path) {
+        const rect = el.getBoundingClientRect();
+        const midY = rect.top + rect.height / 2;
+        const position = e.clientY < midY ? 'before' : 'after';
+        showDropIndicator(el, position);
+        currentDropTarget = { li: el, position, cat };
+      } else if (draggedType === 'page') {
+        // Page dragged over category header — allow drop into this category
+        el.classList.add('drag-over-cat');
+        currentDropTarget = { li: el, position: 'into', cat };
+      }
+    });
+    el.addEventListener('dragleave', () => el.classList.remove('drag-over-cat'));
+    el.addEventListener('drop', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      el.classList.remove('drag-over-cat');
+      if (!currentDropTarget) return;
+      if (draggedType === 'category' && draggedItem.path !== cat.path) {
+        handleCatDrop(currentDropTarget.cat, currentDropTarget.position);
+      } else if (draggedType === 'page' && draggedItem) {
+        handlePageDropIntoCat(cat);
+      }
+      clearDropIndicator();
+    });
   }
 
   // Header
@@ -214,12 +247,9 @@ function renderPageItem(page, cat) {
     requestAnimationFrame(() => li.classList.add('dragging'));
   });
 
-  li.addEventListener('dragend', () => {
-    li.classList.remove('dragging');
-    clearDropIndicator();
-    draggedItem = null;
+  li.addEventListener('dragend', (e) => {
+    onDragEnd(e);
     draggedCat = null;
-    draggedType = null;
   });
 
   li.addEventListener('dragover', (e) => {
@@ -517,41 +547,46 @@ function onCatDragStart(e, cat) {
   draggedItem = cat;
   draggedType = 'category';
   e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/plain', cat.path);
+  requestAnimationFrame(() => e.target.classList.add('dragging'));
 }
 
-function onCatDragEnd() {
-  document.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+function onDragEnd(e) {
+  e.target.classList.remove('dragging');
+  document.querySelectorAll('.drag-over-cat').forEach(el => el.classList.remove('drag-over-cat'));
+  clearDropIndicator();
   draggedItem = null;
   draggedType = null;
 }
 
-function onCatDragOver(e, el) {
-  if (draggedType !== 'category') return;
-  e.preventDefault();
-  e.dataTransfer.dropEffect = 'move';
+async function handleCatDrop(targetCat, position) {
+  if (!draggedItem || draggedItem.path === targetCat.path) return;
+  // Collect all categories and compute new order
+  const cats = [...treeData.categories].filter(c => c.path !== draggedItem.path);
+  const targetIdx = cats.findIndex(c => c.path === targetCat.path);
+  const insertIdx = position === 'before' ? targetIdx : targetIdx + 1;
+  cats.splice(insertIdx, 0, draggedItem);
+  // Update all positions
+  const updates = cats.map((c, i) =>
+    fetch(`/api/category/${encodeURIComponent(c.path)}/position`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ position: i + 1 }),
+    })
+  );
+  await Promise.all(updates);
+  loadTree();
 }
 
-async function onCatDrop(e, targetCat) {
-  e.preventDefault();
-  if (!draggedItem || draggedType !== 'category' || draggedItem.path === targetCat.path) return;
-
-  // Swap positions
-  const draggedPos = draggedItem.position;
-  const targetPos = targetCat.position;
-
-  await Promise.all([
-    fetch(`/api/category/${encodeURIComponent(draggedItem.path)}/position`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ position: targetPos }),
-    }),
-    fetch(`/api/category/${encodeURIComponent(targetCat.path)}/position`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ position: draggedPos }),
-    }),
-  ]);
-
+async function handlePageDropIntoCat(targetCat) {
+  if (!draggedItem) return;
+  const destDir = targetCat.path;
+  const newPosition = (targetCat.pages?.length || 0) + 1;
+  await fetch(`/api/page/${encodeURIComponent(draggedItem.path)}/move`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ category: destDir, position: newPosition }),
+  });
   loadTree();
 }
 
@@ -917,6 +952,58 @@ async function submitCreatePage() {
   loadTree();
 }
 
+// ─── Create Category Modal ───
+
+const createCatModal = document.getElementById('create-cat-modal');
+const createCatTitle = document.getElementById('create-cat-title');
+const createCatBody = document.getElementById('create-cat-body');
+const createCatSubmit = document.getElementById('create-cat-submit');
+const createCatClose = document.getElementById('create-cat-close');
+
+function openCreateCategoryModal() {
+  createCatTitle.textContent = t('newCategory');
+  createCatBody.innerHTML = `
+    <div class="form-group">
+      <label class="form-label">${t('categoryLabel')}</label>
+      <input class="form-input" id="create-cat-label" placeholder="${t('categoryLabelPlaceholder')}">
+    </div>
+    <div class="form-group">
+      <label class="form-label">${t('folderName')}</label>
+      <input class="form-input" id="create-cat-name" placeholder="${t('folderNamePlaceholder')}" style="font-family:monospace">
+      <div style="font-size:11px;color:var(--text-muted);margin-top:4px">${t('folderNameHint')}</div>
+    </div>
+  `;
+  createCatModal.classList.add('open');
+
+  const labelInput = document.getElementById('create-cat-label');
+  const nameInput = document.getElementById('create-cat-name');
+  let nameManual = false;
+  labelInput.addEventListener('input', () => {
+    if (!nameManual) {
+      nameInput.value = slugify(labelInput.value);
+    }
+  });
+  nameInput.addEventListener('input', () => { nameManual = true; });
+  labelInput.focus();
+}
+
+createCatSubmit.addEventListener('click', async () => {
+  const label = document.getElementById('create-cat-label').value.trim();
+  const name = document.getElementById('create-cat-name').value.trim() || slugify(label);
+  if (!label) { alert(t('categoryLabelRequired')); return; }
+  const position = (treeData?.categories?.length || 0) + 1;
+  await fetch('/api/category/create', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, label, position }),
+  });
+  createCatModal.classList.remove('open');
+  loadTree();
+});
+
+createCatClose.addEventListener('click', () => createCatModal.classList.remove('open'));
+createCatModal.addEventListener('click', (e) => { if (e.target === createCatModal) createCatModal.classList.remove('open'); });
+
 // ─── Keyboard Shortcuts ───
 
 document.addEventListener('keydown', async (e) => {
@@ -929,6 +1016,10 @@ document.addEventListener('keydown', async (e) => {
   }
   if (createModal.classList.contains('open')) {
     if (e.key === 'Escape') createModal.classList.remove('open');
+  }
+  if (createCatModal.classList.contains('open')) {
+    if (e.key === 'Escape') createCatModal.classList.remove('open');
+    if (e.key === 'Enter') createCatSubmit.click();
   }
 });
 
