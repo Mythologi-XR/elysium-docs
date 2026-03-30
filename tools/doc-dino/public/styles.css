@@ -21,6 +21,17 @@ body {
   color: var(--text);
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('bubble-bobble-wallpaper-2880x1800_8.jpg') center / cover no-repeat;
+  filter: blur(12px) saturate(0.15) brightness(0.35);
+  transform: scale(1.05); /* prevents blur edge bleed */
+  z-index: -1;
 }
 
 /* ─── Header ─── */
