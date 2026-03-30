@@ -74,20 +74,24 @@ async function loadTree() {
 function renderTree() {
   const container = document.getElementById('tree-container');
   container.innerHTML = '';
-  if (!treeData?.categories?.length) {
-    container.innerHTML = `<div class="empty-state">${t('noDocs')}</div>`;
-  } else {
-    for (const cat of treeData.categories) {
-      container.appendChild(renderCategory(cat, false));
-    }
-  }
 
-  // "New Category" button at bottom of tree
+  // "New Category" button at top of tree
   const newCatBtn = document.createElement('button');
   newCatBtn.className = 'new-cat-btn';
   newCatBtn.innerHTML = '+ ' + t('newCategory');
   newCatBtn.addEventListener('click', () => openCreateCategoryModal());
   container.appendChild(newCatBtn);
+
+  if (!treeData?.categories?.length) {
+    const empty = document.createElement('div');
+    empty.className = 'empty-state';
+    empty.textContent = t('noDocs');
+    container.appendChild(empty);
+  } else {
+    for (const cat of treeData.categories) {
+      container.appendChild(renderCategory(cat, false));
+    }
+  }
 }
 
 function renderCategory(cat, isSub) {
