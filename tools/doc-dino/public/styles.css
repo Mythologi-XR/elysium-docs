@@ -205,6 +205,20 @@ body::before {
 .pub-icon-btn.is-draft { color: #ffa726; }
 .pub-icon-btn.is-draft:hover { background: rgba(255,152,0,0.15); }
 
+/* ─── Delete button ─── */
+.delete-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px;
+  cursor: pointer; border: none; border-radius: 6px; outline: none;
+  background: transparent; color: var(--text-muted);
+  opacity: 0; transition: all 0.15s;
+}
+.page-item:hover .delete-btn,
+.modal-delete-btn { opacity: 1; }
+.delete-btn:hover { color: #ef5350; background: rgba(239,83,80,0.15); }
+.modal-delete-btn { opacity: 0.7; }
+.modal-delete-btn:hover { opacity: 1; }
+
 /* ─── Translation badges ─── */
 .trans-badge {
   font-size: 9px; font-weight: 700; letter-spacing: 0.6px;

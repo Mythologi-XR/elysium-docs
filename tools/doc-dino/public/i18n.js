@@ -41,6 +41,7 @@ const TRANSLATIONS = {
     titleRequired: 'Page title is required',
     enterProjectName: 'My New Page',
     enterFilename: 'my-new-page',
+    deletePage: 'Delete page',
   },
   fr: {
     connecting: 'CONNEXION...',
@@ -82,6 +83,7 @@ const TRANSLATIONS = {
     titleRequired: 'Le titre de la page est requis',
     enterProjectName: 'Ma nouvelle page',
     enterFilename: 'ma-nouvelle-page',
+    deletePage: 'Supprimer la page',
   },
 };
 

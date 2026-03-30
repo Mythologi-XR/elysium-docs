@@ -297,11 +297,21 @@ function renderPageItem(page, cat) {
   const eyeBtn = makeEyeToggle(!page.hidden, () => togglePageHidden(page));
   pageControls.appendChild(eyeBtn);
 
+  const delBtn = document.createElement('button');
+  delBtn.className = 'delete-btn';
+  delBtn.innerHTML = ICON_DELETE;
+  delBtn.title = t('deletePage');
+  delBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    deletePage(page);
+  });
+  pageControls.appendChild(delBtn);
+
   li.appendChild(pageControls);
 
   // Click to preview (but not on drag handle, toggle, eye, or during edit)
   li.addEventListener('click', (e) => {
-    if (e.target.closest('.page-drag-handle, .pub-icon-btn, .eye-toggle, input')) return;
+    if (e.target.closest('.page-drag-handle, .pub-icon-btn, .eye-toggle, .delete-btn, input')) return;
     openPreviewModal(page, cat);
   });
 
@@ -319,6 +329,8 @@ function makeBadge(text, cls) {
 const ICON_PUBLISHED = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="m22 2-10 10"/><path d="m16 2h6v6"/></svg>'; // send/publish
 const ICON_UNPUBLISHED = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>'; // circle-slash / unpublished
 const ICON_DRAFT = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838.838-2.872a2 2 0 0 1 .506-.855z"/></svg>'; // pencil-line / draft
+
+const ICON_DELETE = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>';
 
 const EYE_SVG = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>';
 const EYE_OFF_SVG = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg>';
@@ -418,6 +430,12 @@ async function toggleDraft(page) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ draft: !page.draft }),
   });
+  loadTree();
+}
+
+async function deletePage(page) {
+  if (!confirm(`Delete "${page.title}"?\n\nFile: ${page.path}\n\nThis cannot be undone.`)) return;
+  await fetch(`/api/page/${encodeURIComponent(page.path)}`, { method: 'DELETE' });
   loadTree();
 }
 
@@ -549,6 +567,7 @@ const modalPrev = document.getElementById('modal-prev');
 const modalNext = document.getElementById('modal-next');
 const modalClose = document.getElementById('modal-close');
 const modalEditBtn = document.getElementById('modal-edit');
+const modalDeleteBtn = document.getElementById('modal-delete');
 const modalDraftBadge = document.getElementById('modal-draft-badge');
 const modalEyeToggle = document.getElementById('modal-eye-toggle');
 
@@ -701,6 +720,14 @@ async function toggleEditMode() {
 }
 
 modalEditBtn.addEventListener('click', toggleEditMode);
+
+modalDeleteBtn.addEventListener('click', async () => {
+  const page = previewPages[previewIndex];
+  if (!confirm(`Delete "${page.title}"?\n\nFile: ${page.path}\n\nThis cannot be undone.`)) return;
+  await fetch(`/api/page/${encodeURIComponent(page.path)}`, { method: 'DELETE' });
+  closePreviewModal();
+  loadTree();
+});
 
 modalPrev.addEventListener('click', async () => {
   if (previewIndex > 0) {

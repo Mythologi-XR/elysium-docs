@@ -362,6 +362,22 @@ app.post('/api/reorder', (req, res) => {
   }
 });
 
+app.delete('/api/page/:path(*)', (req, res) => {
+  try {
+    const filePath = path.join(DOCS_DIR, req.params.path);
+    if (!fs.existsSync(filePath)) return res.status(404).json({ error: 'Not found' });
+    // Safety: only allow deleting .md/.mdx files inside DOCS_DIR
+    const resolved = path.resolve(filePath);
+    if (!resolved.startsWith(DOCS_DIR) || !/\.(md|mdx)$/.test(resolved)) {
+      return res.status(403).json({ error: 'Forbidden' });
+    }
+    fs.unlinkSync(resolved);
+    res.json({ ok: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.post('/api/page/create', (req, res) => {
   try {
     const { category, filename, title, draft, position, content } = req.body;
