@@ -1,0 +1,75 @@
+---
+hide_table_of_contents: true
+---
+import { PricingCard, PricingGrid } from '@site/src/components/Pricing';
+
+# 定价
+
+__开始构建和发布所需的全部功能与空间。__
+
+<PricingGrid>
+  <PricingCard
+    title='个人版'
+    description="我们致力于提供慷慨的个人计划，永久免费。"
+    price='免费'
+    pricePeriod='永久！'
+    items={[
+      {
+        description: '一个私人世界',
+        included: true
+      },
+      {
+        description: '无限私人场景',
+        included: true
+      },
+      {
+        description: '3 个公开场景',
+        included: true
+      },
+      {
+        description: '10 GB 资产存储',
+        included: true
+      },
+      {
+        description: '无限带宽',
+        included: true
+      },
+      {
+        description: '在全球 CDN 上发布最多 30 个资产',
+        included: true
+      },
+    ]}
+  />
+  <PricingCard
+    title='专业版与企业版'
+    description="我们仍在完善专业版和企业版用户的定价和功能方案。"
+    price='待定'
+    pricePeriod=''
+    items={[
+      {
+        description: '发布更多世界和场景',
+        included: true
+      },
+      {
+        description: '上传并发布更多资产',
+        included: true
+      },
+      {
+        description: '与团队成员协作',
+        included: true
+      },
+      {
+        description: '高级分析与报告',
+        included: true
+      },
+      {
+        description: '...',
+        included: true
+      },
+      {
+        description: '在 [Discord](https://discord.gg/gYMKNYHJRJ) 上分享你的想法！',
+        included: true
+      },
+    ]}
+  />
+</PricingGrid>

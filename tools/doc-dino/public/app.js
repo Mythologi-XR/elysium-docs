@@ -931,7 +931,7 @@ document.addEventListener('drop', (e) => {
 
 // ─── Parallax ───
 window.addEventListener('scroll', () => {
-  document.documentElement.style.setProperty('--parallax-y', `${window.scrollY * -0.25}px`);
+  document.documentElement.style.setProperty('--parallax-y', `${window.scrollY * -0.05}px`);
 }, { passive: true });
 
 // ─── Init ───

@@ -1,0 +1,50 @@
+{
+  "logo.alt": {
+    "message": "ELYSIUM 标志",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Docs": {
+    "message": "文档",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Pricing": {
+    "message": "定价",
+    "description": "Navbar item with label Pricing"
+  },
+  "item.label.Support": {
+    "message": "支持",
+    "description": "Navbar item with label Support"
+  },
+  "item.label.Discord": {
+    "message": "Discord",
+    "description": "Navbar item with label Discord"
+  },
+  "item.label.Download Elysium on the App Store": {
+    "message": "在 App Store 下载 ELYSIUM",
+    "description": "Navbar item with label Download Elysium on the App Store"
+  },
+  "item.label.Introduction": {
+    "message": "简介",
+    "description": "Navbar item with label Introduction"
+  },
+  "item.label.Getting Started": {
+    "message": "快速入门",
+    "description": "Navbar item with label Getting Started"
+  },
+  "item.label.Card Designer": {
+    "message": "Card Designer",
+    "description": "Navbar item with label Card Designer"
+  },
+  "item.label.Reference": {
+    "message": "参考文档",
+    "description": "Navbar item with label Reference"
+  },
+  "item.label.Contact us": {
+    "message": "联系我们",
+    "description": "Navbar item with label Contact us"
+  },
+  "item.label.FAQ": {
+    "message": "常见问题",
+    "description": "Navbar item with label FAQ"
+  }
+}

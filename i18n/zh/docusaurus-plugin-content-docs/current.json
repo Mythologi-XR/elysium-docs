@@ -1,0 +1,46 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.guide.category.Introduction": {
+    "message": "简介",
+    "description": "The label for category 'Introduction' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Getting Started": {
+    "message": "快速入门",
+    "description": "The label for category 'Getting Started' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.ALPHA Lab": {
+    "message": "ALPHA Lab",
+    "description": "The label for category 'ALPHA Lab' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Card Designer": {
+    "message": "Card Designer",
+    "description": "The label for category 'Card Designer' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Card Designer.link.generated-index.description": {
+    "message": "学习如何使用 ELYSIUM Card Designer 设计精美的 AR 和会员卡。",
+    "description": "The generated-index page description for category 'Card Designer' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Reference": {
+    "message": "参考文档",
+    "description": "The label for category 'Reference' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Pricing": {
+    "message": "定价",
+    "description": "The label for category 'Pricing' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Support": {
+    "message": "支持",
+    "description": "The label for category 'Support' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Press": {
+    "message": "媒体",
+    "description": "The label for category 'Press' in sidebar 'guide'"
+  },
+  "sidebar.guide.category.Policies": {
+    "message": "政策",
+    "description": "The label for category 'Policies' in sidebar 'guide'"
+  }
+}

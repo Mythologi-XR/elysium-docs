@@ -57,7 +57,7 @@ module.exports = {
       pt: { label: 'Português', htmlLang: 'pt' },
       'pt-BR': { label: 'Português (BR)', htmlLang: 'pt-BR' },
       ru: { label: 'Русский', htmlLang: 'ru' },
-      zh: { label: '中文', htmlLang: 'zh' },
+      zh: { label: '中文', direction: 'ltr', htmlLang: 'zh-Hans' },
     },
   },
 
