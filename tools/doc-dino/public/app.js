@@ -260,20 +260,41 @@ function renderPageItem(page, cat) {
     if (draggedType !== 'page') return;
     if (draggedItem.path === page.path) return;
     e.preventDefault();
+    e.stopPropagation();
     e.dataTransfer.dropEffect = 'move';
 
-    const rect = li.getBoundingClientRect();
-    const midY = rect.top + rect.height / 2;
-    const position = e.clientY < midY ? 'before' : 'after';
-    showDropIndicator(li, position);
-    currentDropTarget = { li, position, page, cat };
+    // Cross-category: highlight target category instead of showing reorder line
+    const srcDir = draggedItem.path.split('/').slice(0, -1).join('/');
+    const destDir = page.path.split('/').slice(0, -1).join('/');
+    if (srcDir !== destDir) {
+      clearDropIndicator();
+      const catEl = li.closest('.category');
+      if (catEl) catEl.classList.add('drag-over-cat');
+      currentDropTarget = { li: catEl, position: 'into', cat };
+    } else {
+      const rect = li.getBoundingClientRect();
+      const midY = rect.top + rect.height / 2;
+      const position = e.clientY < midY ? 'before' : 'after';
+      showDropIndicator(li, position);
+      currentDropTarget = { li, position, page, cat };
+    }
+  });
+
+  li.addEventListener('dragleave', () => {
+    const catEl = li.closest('.category');
+    if (catEl) catEl.classList.remove('drag-over-cat');
   });
 
   li.addEventListener('drop', (e) => {
     e.preventDefault();
     e.stopPropagation();
     if (!draggedItem || draggedType !== 'page' || !currentDropTarget) return;
-    handlePageDrop(currentDropTarget.page, currentDropTarget.cat, currentDropTarget.position);
+    document.querySelectorAll('.drag-over-cat').forEach(el => el.classList.remove('drag-over-cat'));
+    if (currentDropTarget.position === 'into') {
+      handlePageDropIntoCat(currentDropTarget.cat);
+    } else {
+      handlePageDrop(currentDropTarget.page, currentDropTarget.cat, currentDropTarget.position);
+    }
     clearDropIndicator();
   });
 
