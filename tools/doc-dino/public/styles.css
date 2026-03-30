@@ -381,3 +381,13 @@ body {
   text-align: center; padding: 40px 20px; color: var(--text-muted);
   font-size: 14px;
 }
+
+/* ─── Footer ─── */
+.app-footer {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 32px 24px 24px;
+  border-top: 1px solid var(--border);
+  opacity: 0.35;
+}
+.footer-logo { height: 28px; }
+.footer-copy { font-size: 11px; color: var(--text-muted); letter-spacing: 0.3px; }
