@@ -34,8 +34,9 @@ function updateLangSwitcher() {
 }
 
 langSwitcher.addEventListener('click', () => {
-  const idx = SUPPORTED_LOCALES.findIndex(l => l.code === getLocale());
-  const next = SUPPORTED_LOCALES[(idx + 1) % SUPPORTED_LOCALES.length];
+  const available = SUPPORTED_LOCALES.filter(l => TRANSLATIONS[l.code]);
+  const idx = available.findIndex(l => l.code === getLocale());
+  const next = available[(idx + 1) % available.length];
   setLocale(next.code);
   updateLangSwitcher();
   // Re-render everything with new locale

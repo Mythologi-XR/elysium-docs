@@ -93,7 +93,6 @@ function t(key) {
 }
 
 function setLocale(locale) {
-  if (!TRANSLATIONS[locale]) return;
   currentLocale = locale;
   localStorage.setItem('doc-dino-lang', locale);
 }
