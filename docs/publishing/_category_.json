@@ -1,4 +1,5 @@
 {
   "label": "Publishing",
-  "className": "hidden"
+  "className": "hidden",
+  "position": 14
 }

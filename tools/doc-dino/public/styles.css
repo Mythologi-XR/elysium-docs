@@ -97,7 +97,7 @@ body::before {
 .sidebar-header {
   display: flex; align-items: center; justify-content: flex-end;
   padding: 19px 10px 8px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 0px solid var(--border);
 }
 .sidebar-toggle {
   background: none; border: none; color: var(--text-muted);
