@@ -1,8 +1,8 @@
 {
-  "name": "doc-dino",
+  "name": "docu-dino",
   "version": "1.0.0",
   "private": true,
-  "description": "Doc Dino — drag-and-drop docs manager for Docusaurus",
+  "description": "Docu Dino — drag-and-drop docs manager for Docusaurus",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

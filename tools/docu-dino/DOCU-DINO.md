@@ -1,9 +1,9 @@
 ---
-title: Doc Dino
+title: Docu Dino
 draft: true
 ---
 
-# Doc Dino — Guide
+# Docu Dino — Guide
 
 **A local, browser-based drag-and-drop tool for reorganizing the ELYSIUM Docusaurus site.**
 
@@ -52,7 +52,7 @@ draft: true
 
 ## Overview
 
-The Doc Dino is a self-contained, offline, browser-based tool for visually managing the page hierarchy of the ELYSIUM Docusaurus documentation site. Instead of manually editing frontmatter `sidebar_position` values, `_category_.json` files, and moving files between directories, you can drag and drop pages in a visual tree.
+The Docu Dino is a self-contained, offline, browser-based tool for visually managing the page hierarchy of the ELYSIUM Docusaurus documentation site. Instead of manually editing frontmatter `sidebar_position` values, `_category_.json` files, and moving files between directories, you can drag and drop pages in a visual tree.
 
 **What it does:**
 - Reads the `docs/` directory, parsing all markdown frontmatter and category metadata
@@ -93,11 +93,11 @@ The Doc Dino is a self-contained, offline, browser-based tool for visually manag
 From the repository root:
 
 ```bash
-cd tools/doc-dino
+cd tools/docu-dino
 npm install
 ```
 
-This installs the tool's dependencies (`express`, `chokidar`, `gray-matter`, `glob`, `marked`) into `tools/doc-dino/node_modules/`. These are isolated from the Docusaurus project's dependencies.
+This installs the tool's dependencies (`express`, `chokidar`, `gray-matter`, `glob`, `marked`) into `tools/docu-dino/node_modules/`. These are isolated from the Docusaurus project's dependencies.
 
 ### Verify installation
 
@@ -108,7 +108,7 @@ npm run dino
 You should see:
 
 ```
-  📄 Doc Dino running at http://localhost:3333
+  📄 Docu Dino running at http://localhost:3333
 
   Watching: /path/to/elysium-docs/docs
 ```
@@ -130,7 +130,7 @@ npm run dino
 Or directly:
 
 ```bash
-node tools/doc-dino/server.js
+node tools/docu-dino/server.js
 ```
 
 The tool runs on **port 3333** by default. The connection status indicator in the top-right corner shows "Connected" (green) when the SSE stream is active.
@@ -266,7 +266,7 @@ The SSE connection status is shown in the top-right corner:
 
 ### Server
 
-**File:** `tools/doc-dino/server.js`
+**File:** `tools/docu-dino/server.js`
 
 - **Express** serves the static frontend and REST API on port 3333
 - **gray-matter** parses and writes YAML frontmatter without corrupting markdown content
@@ -277,7 +277,7 @@ The SSE connection status is shown in the top-right corner:
 
 ### Frontend
 
-**Files:** `tools/doc-dino/public/` (`index.html`, `styles.css`, `app.js`)
+**Files:** `tools/docu-dino/public/` (`index.html`, `styles.css`, `app.js`)
 
 - **Vanilla JS** — no React, no build step, no bundler
 - **HTML5 Drag and Drop API** for reordering
@@ -322,7 +322,7 @@ Edit `const PORT = 3333;` in `server.js` to use a different port.
 
 ### Changing the docs directory
 
-The docs path is auto-resolved relative to the tool's location (`../../docs`). No manual configuration needed if the tool remains at `tools/doc-dino/`.
+The docs path is auto-resolved relative to the tool's location (`../../docs`). No manual configuration needed if the tool remains at `tools/docu-dino/`.
 
 ---
 
@@ -332,7 +332,7 @@ The docs path is auto-resolved relative to the tool's location (`../../docs`). N
 Kill the existing process or change the port in `server.js`.
 
 **Tree is empty**
-Ensure you're running the tool from the `elysium-docs` repository root, not from inside `tools/doc-dino/`.
+Ensure you're running the tool from the `elysium-docs` repository root, not from inside `tools/docu-dino/`.
 
 **Changes not appearing in Docusaurus**
 The tool writes to the same files Docusaurus reads. If the dev server is running (`npm start`), it will hot-reload automatically. For production, run `npm run build` after making changes.

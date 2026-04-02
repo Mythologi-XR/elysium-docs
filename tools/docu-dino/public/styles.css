@@ -246,7 +246,7 @@ body::before {
   font-family: inherit; font-size: 13px; cursor: pointer;
   transition: all 0.15s;
 }
-.new-cat-btn:hover, .new-cat-btn:active { color: var(--accent); border-color: var(--accent); background: var(--surface-hover); }
+.new-cat-btn:hover, .new-cat-btn:active { color: #ffbf00; border-color: #ffbf00; background: var(--surface-hover); }
 
 /* ─── Page Items ─── */
 .page-item {

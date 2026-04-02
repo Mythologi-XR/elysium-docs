@@ -1,9 +1,9 @@
 {
-  "label": "Docucment Dinosaur",
+  "label": "Docu Dino",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "slug": "/alpha-lab/doc-dino",
+    "slug": "/alpha-lab/docu-dino",
     "description": "No code local GUI in your browser for managing and editing Docusaurus pages."
   }
 }

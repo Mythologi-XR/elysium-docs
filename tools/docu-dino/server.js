@@ -430,6 +430,6 @@ app.post('/api/page/create', (req, res) => {
 // ─── Start ───
 
 app.listen(PORT, () => {
-  console.log(`\n  🦕 Doc Dino running at http://localhost:${PORT}\n`);
+  console.log(`\n  🦕 Docu Dino running at http://localhost:${PORT}\n`);
   console.log(`  Watching: ${DOCS_DIR}\n`);
 });

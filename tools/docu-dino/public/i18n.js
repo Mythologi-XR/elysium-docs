@@ -1,4 +1,4 @@
-// ─── Doc Dino i18n ───
+// ─── Docu Dino i18n ───
 
 const TRANSLATIONS = {
   en: {
@@ -101,7 +101,7 @@ const TRANSLATIONS = {
   },
 };
 
-let currentLocale = localStorage.getItem('doc-dino-lang') || navigator.language.split('-')[0] || 'en';
+let currentLocale = localStorage.getItem('docu-dino-lang') || navigator.language.split('-')[0] || 'en';
 if (!TRANSLATIONS[currentLocale]) currentLocale = 'en';
 
 function t(key) {
@@ -110,7 +110,7 @@ function t(key) {
 
 function setLocale(locale) {
   currentLocale = locale;
-  localStorage.setItem('doc-dino-lang', locale);
+  localStorage.setItem('docu-dino-lang', locale);
 }
 
 function getLocale() {
