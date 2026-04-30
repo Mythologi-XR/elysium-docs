@@ -21,9 +21,9 @@ Fill in the details for your cloud save:
 | **Project Name** | Yes | Pre-filled from your current project name |
 | **Card Name** | Yes | Pre-filled from your card title |
 | **Description** | Yes | A short description of your design |
-| **Status** | Yes | **Draft** (work in progress) or **Published** (ready to share) |
+| **Status** | Yes | **Draft** (work in progress, not publicly listed) or **Published** (ready to share) |
 
-Click **Save** to start uploading. A progress bar shows the upload percentage and file size.
+The Card Designer reports the **total size of your project** (images, audio, stickers, and all design data) as part of the upload — typically tens of megabytes for a fully composed card. Click **Save** to start uploading. A progress bar shows the upload percentage and file size as it transfers.
 
 ![Save to ELYSIUM modal with project name, card name, description, and status fields](/img/card-designer/54.png)
 
@@ -82,8 +82,21 @@ Click an eCard in the list to load it into your workspace. You'll see a download
 
 ![Download progress bar showing percentage and file size while loading an eCard from the cloud](/img/card-designer/61.png)
 
+### Sync-on-switch
+
+When you click a different eCard while you have **unsaved changes** in your current project, the designer offers to **sync your current project first** before swapping.
+
+- **Sync** — Uploads the current project to the cloud, then loads the new eCard
+- **Discard** — Throws away your current changes and loads the new eCard
+- **Stay** — Cancels the switch and keeps you on the current project
+
+This is the same protection you get when closing the tab or signing out — see [Unsaved changes protection](#unsaved-changes-protection) below.
+
+<!-- TODO-SCREENSHOT (91): Sync-on-switch confirmation dialog with Sync, Discard, and Stay options when switching to a different cloud eCard with unsaved work -->
+![Sync-on-switch dialog when opening a different eCard with unsaved local changes](/img/card-designer/91.png)
+
 :::caution
-Loading a different eCard replaces your current workspace. If you have unsaved changes, a confirmation dialog asks whether you want to stay or discard your changes.
+Loading a different eCard replaces your current workspace. If you have unsaved changes, the sync-on-switch dialog appears so you don't lose work.
 :::
 
 ![Confirmation dialog asking "You have unsaved changes" with Stay and Leave buttons](/img/card-designer/62.png)

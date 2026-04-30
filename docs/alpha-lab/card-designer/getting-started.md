@@ -8,29 +8,53 @@ sidebar_position: 2
 
 ### Step 1 — Open the Card Designer
 
-Navigate to the Card Designer from the ELYSIUM web app. You'll land on a welcome screen with a glassy card animation.
+Go to **[https://alpha.elysium.ar](https://alpha.elysium.ar)**. You'll land on a welcome screen with a glassy card animation.
 
 ![Card Designer landing page with the glassmorphic card animation](/img/card-designer/4.png)
 
-Click anywhere to get started, or drag a previously saved `.ecard` file onto the page to pick up where you left off.
+You have three ways to get going:
+
+- **Sign in** — If you already have an ELYSIUM account
+- **Create an account** — Walks you through a quick sign-up flow
+- **Start a new project** — Jump straight into the designer (no account needed)
+
+If you have a saved design from a previous session, you can also **drag and drop a `.ecard` file directly onto the landing page** to pick up where you left off.
+
+:::tip
+You don't need to sign in immediately. Many people prefer to design first and create an account later when they want to save to the cloud.
+:::
 
 ### Step 2 — Set up your project
 
-A quick setup wizard walks you through four choices:
+The Card Designer is a **templating system**: a single project (think of it as your "world") can hold one or more reusable cards inside it. The setup wizard walks you through six steps to create that first card:
 
 1. **Start new or load saved** — Begin fresh or resume from a saved `.ecard` file
 
    ![Onboarding wizard — Start New Project and Load Saved Project options](/img/card-designer/5.png)
 
-2. **Name your project** — Give it something memorable (this becomes your default filename)
-3. **Pick your card type** — AR Card or Loyalty Card (you'll see a live preview of the card shape and dimensions)
+2. **Name your project** — Give your "world" a memorable name. This is the larger container that can hold multiple cards (so don't make it the same as your card title).
+
+3. **Pick your card type** — AR Card or Loyalty Card. The wizard shows a live preview of the card shape and dimensions:
+
+   - **AR Card** — Portrait playing-card form factor (like a tarot, magic, or profile card)
+   - **Loyalty Card** — Landscape credit-card form factor (like a discount or membership card)
+
+   The two types have different content fields available later, but they share the same designer.
 
    ![Card type selection step with AR Card and Loyalty Card options and the live shape preview](/img/card-designer/6.png)
 
-4. **Name your card** — The title that appears on your card
-5. **Review** — Double-check everything, then hit **"Start Designing"**
+4. **Name your card** — The unique title for the first card in your project
+5. **Add a description** — A short note about this card (also used as a default collection label)
+6. **Review** — Double-check everything you've entered. If something needs fixing, navigate back to that step. Otherwise hit **"Start Designing"**.
 
    ![Onboarding wizard review step showing project name, card type, dimensions, and orientation](/img/card-designer/7.png)
+
+### Step 3 — Newsletter (optional)
+
+Before the workspace opens, you may be offered the chance to sign up for the ELYSIUM newsletter to hear about new features and tools as they ship. You can skip this step or fill it out — you'll go straight to the workspace either way.
+
+<!-- TODO-SCREENSHOT (75): Newsletter signup step showing name, "what are you building" field, and Skip option -->
+![Newsletter signup step shown after the wizard summary](/img/card-designer/75.png)
 
 That's it — you're in the workspace.
 

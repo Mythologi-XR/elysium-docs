@@ -91,22 +91,33 @@ Newly created links automatically expand so you can easily copy the URL and pass
 
 When someone opens your share link, they get a full-screen 3D viewer with your card rendered exactly as you designed it:
 
-- **3D card preview** — Full materials, lighting, and effects
-- **Info bar** — Shows the card title, card type, and your creator name
+- **3D card preview** — Full materials, lighting, and effects (including any spin animation)
+- **Info bar** — Shows the **project name** ("the world"), **card name**, and **card type**, plus your creator name
 - **Camera presets** — All 5 presets available (Portrait, Hero, Float, Drama, Showcase)
 - **Card flip** — Viewers can flip between front and back
-- **Audio** — If you attached audio, it plays automatically
+- **Audio** — If you attached audio, it plays automatically when the share opens
+- **Language switcher** — Viewers can switch the player UI between supported languages (currently English, French, and Italian)
 - **Copy link** — Viewers can copy the share URL from the toolbar
 
 ![Cloud share player showing a 3D card preview with info bar displaying card title, type, and creator name, plus the floating toolbar](/img/card-designer/67.png)
+
+<!-- TODO-SCREENSHOT (92): Share player language switcher dropdown showing English, French, and Italian options -->
+![Share player language switcher with EN, FR, and IT options](/img/card-designer/92.png)
 
 If a viewer's device doesn't support WebGL, they'll see a static image preview instead of the 3D render.
 
 ![WebGL fallback showing a static image preview of the card when 3D rendering is not available](/img/card-designer/68.png)
 
 :::note
-The share player is read-only — viewers cannot change your design. They can only view, flip, and interact with the 3D preview.
+The share player is read-only — viewers cannot change your design. They can only view, flip, switch the UI language, and interact with the 3D preview.
 :::
+
+### Owner shortcut
+
+If you (the creator) open one of your own share links while signed in, the player shows an extra **Edit** button next to the **Owner** badge that takes you straight back to the Card Designer with that eCard loaded. Viewers without ownership don't see this button.
+
+<!-- TODO-SCREENSHOT (93): Share player as the owner sees it — Owner badge visible plus an Edit button that links back to the designer -->
+![Share player owner view with the Owner badge and the Edit shortcut visible](/img/card-designer/93.png)
 
 ---
 
@@ -183,3 +194,16 @@ The **Share** button in the Export panel and the fullscreen toolbar creates a qu
 :::caution
 Local preview links only work on the **same browser and device** where they were created. Clearing your browser data deletes them permanently. For sharing with other people, use cloud share from the Privacy & Sharing panel.
 :::
+
+---
+
+## Share Preview (in-designer dry run)
+
+The **Share Preview** button (in the floating toolbar, alongside the fullscreen and screenshot buttons) opens the share player **without creating a real share link**. It's a dry-run preview that shows you exactly what a recipient would see — same camera presets, same audio autoplay, same controls — without uploading anything or changing your privacy state.
+
+A small banner at the top of the preview confirms it's a *preview* and not a live share.
+
+<!-- TODO-SCREENSHOT (94): Share Preview banner across the top of the share player view in the designer, with the rest of the player visible underneath -->
+![Share Preview banner across the top of the share player dry-run](/img/card-designer/94.png)
+
+This is the fastest way to sanity-check your card before generating a real cloud share link.

@@ -21,9 +21,15 @@ Keyboard shortcuts for camera presets are paused when you're typing in a text fi
 
 ## Language support
 
-The Card Designer is available in **English** and **French**. Click the globe icon in the workspace to switch languages.
+The Card Designer and the share player are available in **English**, **French**, and **Italian** (Italian was added recently and is rolling out across the app and the share player).
 
-![Globe icon language toggle showing EN/FR options](/img/card-designer/44.png)
+Click the globe icon in the workspace (or in the share player toolbar) to switch languages. The chosen language persists across sessions, so you only need to set it once.
+
+![Globe icon language toggle showing EN / FR / IT options](/img/card-designer/44.png)
+
+:::note
+We're moving the language picker to a dropdown menu so it scales as more languages land. The functionality is the same either way — pick the language you want and the UI updates instantly.
+:::
 
 ---
 
