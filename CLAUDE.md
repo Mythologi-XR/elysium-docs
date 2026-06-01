@@ -8,7 +8,7 @@ Public documentation site for ELYSIUM, a no-code AR worldbuilding platform by MY
 - **Consumed by:** end users / creators (public site); no repo imports it.
 - **Documents:** the full ELYSIUM platform (features sourced from `elysium-app`, `elysium-web-app`, and the broader ecosystem).
 - **Design language:** follows the ELYSIUM dark glassmorphism aesthetic (shared cross-platform design hierarchy; implemented here in `src/css/custom.css`, not a copy of any other repo's tokens).
-> Full dependency graph: `~/Documents/GitHub/CLAUDE.md` (Dependency Graph).
+> Full dependency graph: ~/Documents/GitHub/CLAUDE.md (Dependency Graph).
 
 ## Repository Map
 ```
@@ -95,8 +95,8 @@ npx docusaurus clear   # Clear Docusaurus cache (use when style/config changes d
 - **Fonts:** Manrope (`--ifm-font-family-base`, Google Fonts) is the primary; **Monument Extended** (`PPMonumentExtended-Regular.*`, loaded locally from `src/fonts/MonumentExtended/`) is the display font for homepage headings; Noto Sans Mono (Google Fonts) is the monospace homepage copy. A missing local Monument Extended file silently falls back to system fonts.
 - **i18n is 12-declared / 3-populated** — `docusaurus.config.js` declares 12 locales (en, ar, de, es, fa, fr, ja, ko, pt, pt-BR, ru, zh; `ar`/`fa` are RTL), but only `i18n/fr`, `i18n/ja`, `i18n/zh` have translation files on disk. Don't assume all 12 are translated.
 - **`@docusaurus/plugin-client-redirects` is installed but NOT wired** — it's in `package.json`/`node_modules` but absent from the `plugins` array, so no redirects are active; docs are served at root (`routeBasePath: '/'`), not under `/docs`.
-- **No CI / context-node lint vendored yet** — there is no `.github/workflows/` and `.claude/` holds only `settings.local.json`. The footer marker below opts this root in once the context-node scripts land.
+- **No CI / context-node lint vendored yet** — there is no .github/workflows/ and `.claude/` holds only `settings.local.json`. The footer marker below opts this root in once the context-node scripts land.
 
 ---
-> For cross-repo workspace context, see `~/Documents/GitHub/CLAUDE.md`
-> Pattern: see `elysium-workspace/.claude/docs/conventions/CONTEXT-NODE-TEMPLATE.md`
+> For cross-repo workspace context, see ~/Documents/GitHub/CLAUDE.md
+> Pattern: see `.claude/docs/conventions/CONTEXT-NODE-TEMPLATE.md`
